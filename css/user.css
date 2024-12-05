@@ -1,0 +1,960 @@
+/* user.css */
+
+/* Variabili CSS */
+:root {
+    --primary-color: #4A90E2; /* Colore primario più moderno */
+    --secondary-color: #50E3C2; /* Colore secondario */
+    --accent-color: #9013FE; /* Colore accent */
+    --dark-gray: #2D3648;
+    --light-gray: #F5F7FA;
+    --background-color: #ffffff;
+    --text-color: #2C3E50;
+    --border-radius: 12px; /* Aumentato per bordi più arrotondati */
+    --transition-speed: 0.3s;
+    --section-padding: 2rem;
+    --section-padding-large: 3rem;
+    --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Ombra più soft */
+    --card-hover-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Stile Globale */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-gray);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: var(--background-color);
+    box-shadow: var(--card-shadow);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark-gray);
+    font-weight: 500;
+    transition: color var(--transition-speed) ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Miglioramenti alle Azioni Utente */
+.user-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem; /* Ridotta la spaziatura */
+    width: 100%;
+}
+
+.user-actions a {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 1rem); /* Uniformato per tre bottoni */
+    text-align: center;
+}
+
+.user-actions a:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Stili Migliorati per Button */
+.btn-primary, .btn-secondary {
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+    background-color: var(--accent-color);
+}
+
+.btn-secondary:hover {
+    background-color: #6A5ACD; /* Cambio colore per hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Informazioni Utente */
+.user-info-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    padding: 2.5rem; /* Aumentata la dimensione */
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    max-width: 800px; /* Aumentata la dimensione */
+    width: 100%;
+    transition: box-shadow var(--transition-speed);
+    margin: 0 auto; /* Centrato */
+}
+
+.user-info-card:hover {
+    box-shadow: var(--card-hover-shadow);
+}
+
+.user-avatar {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem; /* Aumentata la spaziatura */
+}
+
+.user-details {
+    text-align: center;
+    margin-bottom: 1rem; /* Ridotta la spaziatura */
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.user-details p {
+    margin: 0.5rem 0;
+}
+
+.user-details strong {
+    color: var(--dark-gray);
+}
+
+/* Stile Specifico per edit_user.html */
+.edit-user-form {
+    background-color: var(--background-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    max-width: 600px;
+    width: 100%;
+    transition: box-shadow var(--transition-speed), transform var(--transition-speed);
+    margin: 0 auto; /* Centrare il form */
+}
+
+.edit-user-form:hover {
+    box-shadow: var(--card-hover-shadow);
+    transform: translateY(-5px);
+}
+
+.edit-user-form h1 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.edit-user-form .form-group {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    margin-bottom: 1.5rem; /* Aggiunto margine inferiore per spaziatura */
+}
+
+.edit-user-form .form-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem; /* Aumentata la spaziatura */
+    color: var(--dark-gray);
+    font-size: 1rem;
+}
+
+.edit-user-form .form-group input {
+    padding: 0.7rem 1rem;
+    border: 1.5px solid var(--light-gray);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.edit-user-form .form-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+    outline: none;
+}
+
+.edit-user-form .form-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--background-color);
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    margin-top: 4rem;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 1rem 0 0 0;
+}
+
+.footer-links li a {
+    text-decoration: none;
+    color: var(--dark-gray);
+    font-weight: 500;
+    transition: color var(--transition-speed) ease;
+}
+
+.footer-links li a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (min-width: 600px) {
+    .user-actions a {
+        flex: 1 1 calc(33.333% - 1rem); /* Uniformato per tre bottoni */
+    }
+
+    .user-info-card {
+        padding: 3rem;
+        max-width: 800px; /* Aumentata la dimensione */
+    }
+
+    .user-details {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .user-details {
+        font-size: 1.2rem;
+    }
+
+    .edit-user-form {
+        padding: 3rem;
+    }
+
+    .user-actions a, .btn-primary, .btn-secondary {
+        padding: 0.8rem 2rem;
+        font-size: 1.1rem;
+    }
+
+    .edit-user-form .form-group {
+        padding: 0 2rem;
+    }
+}
+
+/* user.css */
+
+/* Sezione Header delle Pagine delle Case */
+.section-header {
+    text-align: center;
+    margin-bottom: 1rem; /* Ridotta la spaziatura */
+}
+
+.section-header h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+/* Lista delle Case */
+.houses-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.house-card {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    width: 300px;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.house-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-hover-shadow);
+}
+
+.house-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.house-details {
+    padding: 1rem;
+    text-align: center;
+}
+
+.house-details h2 {
+    font-size: 1.5rem;
+    color: var(--dark-gray);
+    margin-bottom: 0.5rem;
+}
+
+.house-details p {
+    margin: 0.5rem 0;
+    color: var(--text-color);
+}
+
+.house-details a {
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .section-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .houses-list {
+        gap: 3rem;
+    }
+
+    .house-card {
+        width: 350px;
+    }
+
+    .house-details h2 {
+        font-size: 1.6rem;
+    }
+}
+/* user.css */
+
+/* ...existing styles... */
+
+/* Stili delle Prenotazioni per Seller */
+.booking-details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.booking-details th, .booking-details td {
+    padding: 0.75rem;
+    border: 1px solid var(--light-gray);
+    text-align: center;
+}
+
+.booking-details th {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.booking-card {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.booking-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-hover-shadow);
+}
+
+.booking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+    .booking-details th, .booking-details td {
+        padding: 1rem;
+    }
+
+    .booking-card {
+        padding: 2rem;
+    }
+}
+
+
+/* Stili delle Prenotazioni per Buyer */
+.booking-card {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.booking-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-hover-shadow);
+}
+
+.booking-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.booking-text {
+    flex: 1;
+}
+
+.booking-actions {
+    margin-top: 1rem; /* Spazio tra testo e bottone */
+}
+
+.booking-thumbnail {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.booking-thumbnail img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .booking-info {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .booking-text {
+        flex: 2;
+        margin-right: 1rem;
+    }
+
+    .booking-thumbnail {
+        flex: 1;
+        margin-top: 0;
+    }
+
+    .booking-actions a {
+        margin-top: 0;
+    }
+}
+
+/* Stili delle Case per Seller */
+.house-details {
+    padding: 1rem;
+    text-align: center;
+}
+
+.house-details h2 {
+    font-size: 1.5rem;
+    color: var(--dark-gray);
+    margin-bottom: 0.5rem;
+}
+
+.house-details p {
+    margin: 0.5rem 0;
+    color: var(--text-color);
+}
+
+.house-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.house-actions a {
+    flex: 1 1 45%;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Stili Migliorati per Button */
+.btn-primary, .btn-secondary {
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0.7rem 1rem;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #6A5ACD; /* Cambio colore per hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .house-actions a {
+        flex: 1 1 22%;
+    }
+
+    .house-details {
+        text-align: left;
+    }
+
+    .house-actions {
+        justify-content: flex-start;
+    }
+}
+/* Stili delle Prenotazioni per Seller */
+.booking-details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.booking-details th, .booking-details td {
+    padding: 0.75rem;
+    border: 1px solid var(--light-gray);
+    text-align: center;
+}
+
+.booking-details th {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Stili Migliorati per Button */
+.btn-primary, .btn-secondary {
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #6A5ACD; /* Cambio colore per hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Stili per il Bottone "Contatta" */
+.contatta-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contatta-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Stili per l'Overlay Contact */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.overlay-content {
+    background-color: var(--background-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--dark-gray);
+    cursor: pointer;
+}
+
+.overlay-content h2 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.overlay-content p {
+    margin: 0.5rem 0;
+    color: var(--text-color);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .booking-details th, .booking-details td {
+        padding: 1rem;
+    }
+
+    .contatta-btn {
+        padding: 0.7rem 1.2rem;
+    }
+
+    .overlay-content {
+        padding: 3rem;
+    }
+
+    .close-btn {
+        font-size: 2rem;
+    }
+}
+
+/* user.css */
+
+/* ...existing styles... */
+
+/* user.css */
+
+/* ...existing styles... */
+
+/* Stili per il Form di Aggiunta Proprietà */
+.add-property-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+}
+
+.add-property-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea,
+.form-group select,
+.form-group input[type="file"] {
+    padding: 0.75rem;
+    border: 1px solid var(--light-gray);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.form-group select {
+    height: auto;
+}
+
+.form-group button {
+    align-self: flex-start;
+}
+
+/* Stili per la Sezione Caratteristiche */
+.features-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.feature-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.feature-option input {
+    margin: 0;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+}
+
+.feature-option i {
+    color: var(--primary-color);
+}
+
+/* Miglioramenti Responsive */
+@media (min-width: 768px) {
+    .add-property-form {
+        padding: 2rem;
+    }
+
+    .features-options {
+        gap: 2rem;
+    }
+
+    .feature-option {
+        font-size: 1.1rem;
+    }
+}
+/* Stili per la Sezione Caratteristiche */
+.features-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.feature-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.feature-option input {
+    margin: 0;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+}
+
+.feature-option i {
+    color: var(--primary-color);
+}
+
+/* Miglioramenti Responsive */
+@media (min-width: 768px) {
+    .features-options {
+        gap: 2rem;
+    }
+
+    .feature-option {
+        font-size: 1.1rem;
+    }
+}
+
+/* Stili per le Pagine Superuser, Buyer e Seller */
+.superuser-main, .buyer-main, .seller-main {
+    padding: var(--section-padding);
+}
+
+.section-header h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.superuser-actions, .buyer-actions, .seller-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.action-card {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    padding: 2rem;
+    text-align: center;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-hover-shadow);
+}
+
+.action-icon {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.action-card h2 {
+    font-size: 1.5rem;
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+}
+
+.action-card p {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.action-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.action-form .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.action-form .form-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.action-form .form-group input,
+.action-form .form-group select {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--light-gray);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.action-form button {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-primary, .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #6A5ACD; /* Cambia colore per hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 768px) {
+    .superuser-actions, .buyer-actions, .seller-actions {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .action-card {
+        width: 30%;
+    }
+}

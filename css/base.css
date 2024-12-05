@@ -1,0 +1,94 @@
+/* base.css */
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Root Variables */
+:root {
+    --primary-color: #0071c2;        /* Blu Booking.com */
+    --secondary-color: #005288;      /* Blu scuro */
+    --accent-color: #ffda44;         /* Giallo Booking.com */
+    --background-color: #ffffff;
+    --light-gray: #f0f0f0;
+    --dark-gray: #4a4a4a;
+    --footer-bg: #003580;            /* Blu scuro footer */
+    --text-color: #2c3e50;
+    --font-family: 'Poppins', sans-serif;
+    --transition-speed: 0.3s;
+
+    --btn-hover-bg: #005288;
+    --btn-secondary-hover-bg: #e6b800;
+}
+
+/* General Styles */
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.25rem;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.btn-primary:hover {
+    background-color: var(--btn-hover-bg);
+}
+
+.btn-secondary {
+    background-color: var(--accent-color);
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.btn-secondary:hover {
+    background-color: var(--btn-secondary-hover-bg);
+}
+
+main {
+    padding: 4rem 1rem 2rem; /* Adjusted padding to avoid header overlap */
+}

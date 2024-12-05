@@ -1,0 +1,159 @@
+/* layout.css */
+
+/* Container Generale */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo a {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--background-color);
+    text-decoration: none;
+}
+
+/* Navigazione */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    position: relative;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    background-color: var(--background-color);
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    border-radius: 3px;
+    transition: transform 0.3s ease, top 0.3s ease;
+}
+
+.nav-toggle-label span {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-toggle-label span::before {
+    content: '';
+    top: -10px;
+}
+
+.nav-toggle-label span::after {
+    content: '';
+    top: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    color: var(--background-color);
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Hamburger Menu per Mobile */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-toggle-label {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease;
+    }
+
+    .nav-toggle:checked ~ nav {
+        max-height: 500px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem 0;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        width: 100%;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 1.2rem;
+    }
+
+    .nav-toggle:checked + .nav-toggle-label span {
+        transform: rotate(45deg);
+    }
+
+    .nav-toggle:checked + .nav-toggle-label span::before {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    .nav-toggle:checked + .nav-toggle-label span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+}
+
+/* Contenuto Principale */
+main {
+    margin-top: 80px; /* Altezza dell'header */
+}
+
+/* Uniform Section Spacing */
+section {
+    padding: 4rem 2rem;
+    /* ...existing padding... */
+}

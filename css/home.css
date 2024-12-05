@@ -1,0 +1,262 @@
+/* home.css */
+
+/* Root Variables */
+:root {
+    --primary-color: #1e90ff;           /* Modern Blue */
+    --secondary-color: #104e8b;         /* Darker Blue */
+    --accent-color: #ff7f50;            /* Coral */
+    --background-color: #f5f7fa;
+    --light-gray: #e0e0e0;
+    --dark-gray: #333333;
+    --footer-bg: #1e3d59;
+    --text-color: #2c3e50;
+    --font-family: 'Poppins', sans-serif;
+    --transition-speed: 0.3s;
+    --section-padding: 4rem 2rem;
+    --card-padding: 2rem;
+    --border-radius: 0.5rem;
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --card-hover-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    --section-max-width: 1200px;
+    --card-max-width: 400px;
+}
+
+/* General Styles */
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-speed) ease, transform 0.3s ease;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-speed) ease, transform 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: var(--accent-color);
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.btn-secondary:hover {
+    background-color: #ff5722;
+    transform: translateY(-3px);
+}
+
+main {
+    padding: 4rem 1rem 2rem;
+}
+
+/* Hero Section */
+/* ... Mantenere gli stili esistenti per la sezione hero ... */
+
+/* Search Section */
+.search-section {
+    background-color: #ffffff;
+    padding: var(--section-padding);
+    max-width: var(--section-max-width);
+    margin: -100px auto 2rem;
+    position: relative;
+    z-index: 10;
+    box-shadow: var(--card-shadow);
+    border-radius: var(--border-radius);
+    transition: box-shadow var(--transition-speed) ease;
+}
+
+.search-section:hover {
+    box-shadow: var(--card-hover-shadow);
+}
+
+.search-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--dark-gray);
+}
+
+.search-section .card {
+    background-color: var(--light-gray);
+    padding: var(--card-padding);
+    border-radius: var(--border-radius);
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: var(--card-shadow);
+    transition: box-shadow var(--transition-speed) ease, transform 0.3s ease;
+}
+
+.search-section .card:hover {
+    box-shadow: var(--card-hover-shadow);
+    transform: translateY(-5px);
+}
+
+/* Form di Ricerca */
+.search-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--light-gray);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(30, 144, 255, 0.2);
+}
+
+/* Pulsante "Mostra/Nascondi Parametri Avanzati" */
+#toggle-advanced {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease, transform 0.3s ease, box-shadow var(--transition-speed) ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+#toggle-advanced i {
+    margin-right: 0.5rem;
+    transition: transform var(--transition-speed) ease;
+}
+
+#toggle-advanced.active {
+    background-color: var(--accent-color);
+}
+
+#toggle-advanced:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Parametri Avanzati */
+#advanced-params {
+    display: none; /* Nascondi inizialmente */
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+}
+
+#advanced-params.active {
+    display: grid; /* Mostra come griglia */
+    opacity: 1;
+    max-height: 1000px; /* Valore sufficientemente alto per permettere l'espansione */
+    overflow: visible;
+}
+
+/* Responsività per Parametri Avanzati */
+@media (min-width: 576px) {
+    #advanced-params {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    #advanced-params {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Button Group */
+.button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+/* Bottone "Cerca" */
+.button-group .btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border-radius: var(--border-radius);
+    font-size: 1.2rem;
+    transition: background-color var(--transition-speed) ease, transform 0.3s ease;
+}
+
+.button-group .btn-primary:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+/* Icona Ruotata quando attivo */
+#toggle-advanced.active i {
+    transform: rotate(180deg);
+}

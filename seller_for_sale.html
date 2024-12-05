@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case in Vendita - Profilo Venditore</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome per le icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fogli di stile CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/user.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Nome del Progetto</a>
+            </div>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Chi Siamo</a></li>
+                    <li><a href="services.html">Servizi</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                    <li><a href="login.html">Accedi</a></li>
+                    <li><a href="register.html">Registrati</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="seller-for-sale-main container">
+        <!-- Titolo Sezione -->
+        <section class="section-header">
+            <h1>Le Tue Case in Vendita</h1>
+        </section>
+
+        <!-- Lista delle Case in Vendita -->
+        <section class="houses-list">
+            <div class="house-card">
+                <img src="images/house1.jpg" alt="Casa 1">
+                <div class="house-details">
+                    <h2>Appartamento in Centro</h2>
+                    <p><strong>Prezzo:</strong> €250,000</p>
+                    <p><strong>Località:</strong> Milano</p>
+                    <div class="house-actions">
+                        <a href="house_details.html" class="btn-primary">Visualizza Dettagli</a>
+                        <a href="booking_seller.html?house_id=1" class="btn-primary">Visualizza Prenotazioni</a>
+                        <a href="edit_house.html?house_id=1" class="btn-primary">Modifica Informazioni</a>
+                        <a href="delete_house.html?house_id=1" class="btn-secondary">Elimina Casa</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="house-card">
+                <img src="images/house2.jpg" alt="Casa 2">
+                <div class="house-details">
+                    <h2>Villa con Giardino</h2>
+                    <p><strong>Prezzo:</strong> €500,000</p>
+                    <p><strong>Località:</strong> Roma</p>
+                    <div class="house-actions">
+                        <a href="house_details.html" class="btn-primary">Visualizza Dettagli</a>
+                        <a href="booking_seller.html?house_id=2" class="btn-primary">Visualizza Prenotazioni</a>
+                        <a href="edit_house.html?house_id=2" class="btn-primary">Modifica Informazioni</a>
+                        <a href="delete_house.html?house_id=2" class="btn-secondary">Elimina Casa</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aggiungi altre card delle case qui -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Nome del Progetto. Tutti i diritti riservati.</p>
+            <ul class="footer-links">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Termini di Servizio</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

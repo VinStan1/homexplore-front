@@ -1,0 +1,63 @@
+/* footer.css */
+
+/* Footer Styles */
+footer {
+    background-color: var(--footer-bg);
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem 2rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/* Links nel Footer */
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-links li a {
+    color: #ffffff;
+    font-size: 1rem;
+    transition: color var(--transition-speed) ease;
+}
+
+.footer-links li a:hover {
+    color: var(--accent-color);
+}
+
+/* Footer Text */
+footer p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    footer .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    footer p {
+        margin-bottom: 1rem;
+    }
+}

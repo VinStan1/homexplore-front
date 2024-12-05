@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nome del Progetto - Home</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome per le icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fogli di stile CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Nome del Progetto</a>
+            </div>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Chi Siamo</a></li>
+                    <li><a href="services.html">Servizi</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                    <li><a href="login.html">Accedi</a></li>
+                    <li><a href="register.html">Registrati</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content container">
+                <h1>Trova la Tua Casa Ideale</h1>
+                <p>Con anni di esperienza nel settore immobiliare, offriamo soluzioni su misura per trovare la casa perfetta per te.</p>
+                <a href="#search" class="btn-primary">Inizia la Ricerca</a>
+            </div>
+        </section>
+
+        <!-- Sezione Ricerca Rapida -->
+        <section class="search-section container" id="search">
+            <h2>Trova la Tua Casa Ideale</h2>
+            <div class="card">
+                <form action="search.html" method="GET" class="search-form">
+                    <div class="form-group">
+                        <label for="location"><i class="fas fa-map-marker-alt"></i> Città</label>
+                        <input type="text" id="location" name="location" placeholder="Città o Regione" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="price"><i class="fas fa-euro-sign"></i> Prezzo Massimo</label>
+                        <input type="number" id="price" name="price" placeholder="€" required>
+                    </div>
+                    
+                    <!-- Pulsante per mostrare parametri avanzati -->
+                    <div class="form-group">
+                        <button type="button" id="toggle-advanced" class="btn-secondary">
+                            Mostra parametri avanzati <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Parametri Avanzati (nascosti inizialmente) -->
+                    <div id="advanced-params">
+                        <div class="form-group">
+                            <label for="neighborhood"><i class="fas fa-city"></i> Quartiere</label>
+                            <input type="text" id="neighborhood" name="neighborhood" placeholder="Quartiere">
+                        </div>
+                        <div class="form-group">
+                            <label for="square-meters"><i class="fas fa-ruler-combined"></i> Metri Quadri</label>
+                            <input type="number" id="square-meters" name="square_meters" placeholder="m²">
+                        </div>
+                        <div class="form-group">
+                            <label for="bedrooms"><i class="fas fa-bed"></i> Camere da Letto</label>
+                            <select id="bedrooms" name="bedrooms">
+                                <option value="">Qualsiasi</option>
+                                <option value="1">1+</option>
+                                <option value="2">2+</option>
+                                <option value="3">3+</option>
+                                <option value="4">4+</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="bathrooms"><i class="fas fa-bath"></i> Bagni</label>
+                            <select id="bathrooms" name="bathrooms">
+                                <option value="">Qualsiasi</option>
+                                <option value="1">1+</option>
+                                <option value="2">2+</option>
+                                <option value="3">3+</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group button-group">
+                        <button type="submit" class="btn-primary">Cerca</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Sezione Chi Siamo -->
+        <section class="about-section container">
+            <h2>Chi Siamo</h2>
+            <div class="about-content">
+                <img src="images/about-us.jpg" alt="Chi Siamo" class="about-image">
+                <p>Con anni di esperienza nel settore immobiliare, offriamo soluzioni su misura per trovare la casa perfetta per te.</p>
+            </div>
+        </section>
+
+        <!-- Sezione Servizi -->
+        <section class="services-section container">
+            <h2>I Nostri Servizi</h2>
+            <div class="service-cards">
+                <div class="card service-card">
+                    <i class="fas fa-home fa-3x"></i>
+                    <h3>Vendita Immobili</h3>
+                    <p>Assistenza completa nella vendita del tuo immobile.</p>
+                </div>
+                <div class="card service-card">
+                    <i class="fas fa-search fa-3x"></i>
+                    <h3>Ricerca Personalizzata</h3>
+                    <p>Troviamo la proprietà che soddisfa tutte le tue esigenze.</p>
+                </div>
+                <div class="card service-card">
+                    <i class="fas fa-handshake fa-3x"></i>
+                    <h3>Consulenza Legale</h3>
+                    <p>Supporto legale per una transazione sicura.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sezione Testimonials -->
+        <section class="testimonials-section container">
+            <h2>Cosa Dicono di Noi</h2>
+            <div class="testimonial-cards">
+                <div class="testimonial">
+                    <i class="fas fa-quote-left fa-2x"></i>
+                    <p>"Un servizio eccellente! Ho trovato la casa perfetta in pochissimo tempo."</p>
+                    <div class="testimonial-author">
+                        <i class="fas fa-user-circle"></i>
+                        <span>- Anna Verdi</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <i class="fas fa-quote-left fa-2x"></i>
+                    <p>"Professionali e affidabili. Consiglio vivamente Nome del Progetto."</p>
+                    <div class="testimonial-author">
+                        <i class="fas fa-user-circle"></i>
+                        <span>- Marco Bianchi</span>
+                    </div>
+                </div>
+                <!-- Aggiungi altre testimonianze qui -->
+            </div>
+        </section>
+
+        <!-- Sezione Call to Action -->
+        <section class="cta container">
+            <h2>Inizia la Tua Avventura Immobiliare</h2>
+            <a href="register.html" class="btn-secondary">Registrati Ora</a>
+            <p class="redirect-text">Hai già un account? <a href="login.html">Accedi</a></p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Nome del Progetto. Tutti i diritti riservati.</p>
+            <ul class="footer-links">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Termini di Servizio</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- Script per Gestire i Parametri Avanzati -->
+    <script>
+        document.getElementById('toggle-advanced').addEventListener('click', function() {
+            var advancedParams = document.getElementById('advanced-params');
+            advancedParams.classList.toggle('active');
+            this.classList.toggle('active');
+            
+            if (advancedParams.classList.contains('active')) {
+                this.innerHTML = 'Nascondi parametri avanzati <i class="fas fa-chevron-up"></i>';
+            } else {
+                this.innerHTML = 'Mostra parametri avanzati <i class="fas fa-chevron-down"></i>';
+            }
+        });
+    </script>
+</body>
+</html>

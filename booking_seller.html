@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prenotazioni Casa - Profilo Venditore</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome per le icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fogli di stile CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/user.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Nome del Progetto</a>
+            </div>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Chi Siamo</a></li>
+                    <li><a href="services.html">Servizi</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                    <li><a href="login.html">Accedi</a></li>
+                    <li><a href="register.html">Registrati</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="booking-seller-main container">
+        <!-- Titolo Sezione -->
+        <section class="section-header">
+            <h1>Prenotazioni della Casa</h1>
+        </section>
+
+        <!-- Dettagli Prenotazioni -->
+        <section class="booking-details">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Prenotazione</th>
+                        <th>Nome Utente</th>
+                        <th>Email</th>
+                        <th>Data Inizio</th>
+                        <th>Data Fine</th>
+                        <th>Stato</th>
+                        <th>Azioni</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>101</td>
+                        <td>Luigi Verdi</td>
+                        <td>luigi.verdi@example.com</td>
+                        <td>2024-05-01</td>
+                        <td>2024-05-10</td>
+                        <td>Confermata</td>
+                        <td>
+                            <button class="btn-primary contatta-btn" data-name="Luigi Verdi" data-email="luigi.verdi@example.com">Contatta</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>102</td>
+                        <td>Maria Rossi</td>
+                        <td>maria.rossi@example.com</td>
+                        <td>2024-06-15</td>
+                        <td>2024-06-20</td>
+                        <td>Pendente</td>
+                        <td>
+                            <button class="btn-primary contatta-btn" data-name="Maria Rossi" data-email="maria.rossi@example.com">Contatta</button>
+                        </td>
+                    </tr>
+                    <!-- Aggiungi altre prenotazioni qui -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Nome del Progetto. Tutti i diritti riservati.</p>
+            <ul class="footer-links">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Termini di Servizio</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Overlay Contact Modal -->
+    <div id="contact-overlay" class="overlay">
+        <div class="overlay-content">
+            <span class="close-btn">&times;</span>
+            <h2>Contatti Utente</h2>
+            <p id="contact-name"><strong>Nome:</strong> </p>
+            <p id="contact-email"><strong>Email:</strong> </p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        const contattaButtons = document.querySelectorAll('.contatta-btn');
+        const overlay = document.getElementById('contact-overlay');
+        const closeBtn = document.querySelector('.close-btn');
+        const contactName = document.getElementById('contact-name');
+        const contactEmail = document.getElementById('contact-email');
+
+        contattaButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const name = button.getAttribute('data-name');
+                const email = button.getAttribute('data-email');
+                contactName.innerHTML = `<strong>Nome:</strong> ${name}`;
+                contactEmail.innerHTML = `<strong>Email:</strong> ${email}`;
+                overlay.style.display = 'flex';
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            overlay.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target == overlay) {
+                overlay.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

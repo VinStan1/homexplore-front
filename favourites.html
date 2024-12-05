@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferiti - Nome del Progetto</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome per le icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fogli di stile CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/favourites.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Nome del Progetto</a>
+            </div>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Chi Siamo</a></li>
+                    <li><a href="services.html">Servizi</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                    <li><a href="login.html">Accedi</a></li>
+                    <li><a href="register.html">Registrati</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="favourites-main container">
+        <!-- Titolo Sezione -->
+        <section class="favourites-header">
+            <h1>Le Tue Case Preferite</h1>
+        </section>
+
+        <!-- Elenco Case Preferite -->
+        <section class="favourites-list">
+            <div class="properties-grid">
+                <!-- Singola Proprietà -->
+                <div class="property-card">
+                    <img src="images/casa-1.jpg" alt="Casa 1">
+                    <div class="property-details">
+                        <h3>Appartamento Elegante</h3>
+                        <p class="price">€450,000</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Milano, Centro</p>
+                        <div class="property-actions">
+                            <a href="detail_home.html" class="btn-secondary">Visualizza Dettagli</a>
+                            <button class="btn-remove"><i class="fas fa-trash-alt"></i> Rimuovi</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ripeti le property-card per altre case -->
+                <div class="property-card">
+                    <img src="images/casa-2.jpg" alt="Casa 2">
+                    <div class="property-details">
+                        <h3>Villa Moderna</h3>
+                        <p class="price">€850,000</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Milano, Brera</p>
+                        <div class="property-actions">
+                            <a href="detail_home.html" class="btn-secondary">Visualizza Dettagli</a>
+                            <button class="btn-remove"><i class="fas fa-trash-alt"></i> Rimuovi</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="property-card">
+                    <img src="images/casa-3.jpg" alt="Casa 3">
+                    <div class="property-details">
+                        <h3>Loft Spazioso</h3>
+                        <p class="price">€300,000</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Milano, Porta Romana</p>
+                        <div class="property-actions">
+                            <a href="detail_home.html" class="btn-secondary">Visualizza Dettagli</a>
+                            <button class="btn-remove"><i class="fas fa-trash-alt"></i> Rimuovi</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Aggiungi altre property-card secondo necessità -->
+            </div>
+
+            <!-- Messaggio se nessun preferito -->
+            <!-- <div class="no-favourites">
+                <p>Non hai ancora messo nei preferiti nessuna casa.</p>
+            </div> -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Nome del Progetto. Tutti i diritti riservati.</p>
+            <ul class="footer-links">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Termini di Servizio</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
