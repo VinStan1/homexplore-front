@@ -25,43 +25,54 @@
   <body>
     <!-- Header -->
     <header>
-      <div class="container">
-        <div class="logo">
-          <a href="index.html"
-            ><i class="fas fa-map-marked-alt"></i> HomeXplore</a
-          >
+        <div class="container">
+          <div class="logo" style="display: flex">
+            <a href="main.html"
+              ><img
+                src="images/logoblackandwhite.png"
+                alt="HomeXplore Logo"
+                style="
+                  width: 40px;
+                  height: auto;
+                  object-fit: contain;
+                  vertical-align: middle;
+                "
+              />
+              <span style="vertical-align: middle">HomeXplore</span></a
+            >
+          </div>
+          <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+          <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+          </label>
+          <nav>
+            <ul>
+              <li>
+                <a href="main.html"><i class="fas fa-home"></i> Home</a>
+              </li>
+              <li>
+                <a href="index.html">
+                  <i class="fas fa-search"></i>
+                  Search</a
+                >
+              </li>
+              <li>
+                <a href="contact.html"
+                  ><i class="fas fa-envelope"></i> Contact us</a
+                >
+              </li>
+              <li>
+                <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+              </li>
+              <li>
+                <a href="register.html"
+                  ><i class="fas fa-user-plus"></i> Sign up</a
+                >
+              </li>
+            </ul>
+          </nav>
         </div>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-        <label for="nav-toggle" class="nav-toggle-label">
-          <span></span>
-        </label>
-        <nav>
-          <ul>
-            <li>
-              <a href="index.html"><i class="fas fa-home"></i> Home</a>
-            </li>
-            <li>
-              <a href="about.html"
-                ><i class="fas fa-info-circle"></i> About us</a
-              >
-            </li>
-            <li>
-              <a href="contact.html"
-                ><i class="fas fa-envelope"></i> Contact us</a
-              >
-            </li>
-            <li>
-              <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
-            </li>
-            <li>
-              <a href="register.html"
-                ><i class="fas fa-user-plus"></i> Sign up</a
-              >
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+      </header>
 
     <!-- Main Content -->
     <main class="detail-main container">
@@ -119,7 +130,8 @@
       <!-- Details Section -->
       <section class="details">
         <h1>
-          <i class="fas fa-building"></i> 153 West 80th Street #2D1D, New York, NY 10024
+          <i class="fas fa-building"></i> 153 West 80th Street #2D1D, New York,
+          NY 10024
         </h1>
         <p class="price"><i class="fas fa-dollar-sign"></i> 1,850,000</p>
         <div class="property-info">
@@ -130,6 +142,7 @@
           <p><i class="fas fa-bed"></i> <strong>Bedrooms:</strong> 3</p>
           <p><i class="fas fa-bath"></i> <strong>Bathrooms:</strong> 3</p>
           <p><i class="fas fa-home"></i> <strong>Type:</strong> Apartment</p>
+          <p><i class="fas fa-calendar-alt"></i> <strong>Days on HomeXplore:</strong> 23</p>
         </div>
         <div class="description">
           <h2><i class="fas fa-info-circle"></i> Description</h2>
@@ -153,11 +166,7 @@
           </p>
         </div>
         <div class="map-link">
-          <a
-            href="map.html?houseId=1"
-            target="_blank"
-            class="btn-primary"
-          >
+          <a href="map.html?houseId=1" target="_blank" class="btn-primary">
             <i class="fas fa-map-marker-alt"></i> See it on the Map
           </a>
         </div>
