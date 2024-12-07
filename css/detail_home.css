@@ -1,19 +1,39 @@
 /* detail_home.css */
+/* Reset Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.detail-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 /* Gallery Section */
 .gallery {
     display: flex;
-    flex-direction: column;
     gap: 1rem;
-    margin-bottom: 3rem;
+    align-items: stretch;
+    padding:0;
+    padding-top: 2rem;
+    width: 90%;
+    height: 90%;
+}
+
+.main-photo {
+    flex: 2; /* La foto principale occupa 2 parti dello spazio */
 }
 
 .main-photo img {
     width: 100%;
     height: auto;
-    border-radius: var(--border-radius);
-    box-shadow: var(--card-shadow);
-    transition: transform var(--transition-speed) ease;
+    border-radius: var(--border-radius, 8px);
+    box-shadow: var(--card-shadow, 0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
 .main-photo img:hover {
@@ -21,17 +41,22 @@
 }
 
 .thumbnail-photos {
-    display: flex;
-    gap: 1rem;
+    flex: 1; /* Le miniature occupano 1 parte dello spazio */
+    display: grid;
+    grid-template-rows: repeat(2, 1fr); /* Due righe uguali */
+    grid-template-columns: repeat(2, 1fr); /* Due colonne uguali */
+    gap: 0.5rem; /* Spaziatura tra le immagini del mosaico */
+    height: 100%; /* Occupa la stessa altezza della foto principale */
 }
 
 .thumbnail-photos img {
-    width: 25%;
-    height: auto;
-    border-radius: var(--border-radius);
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Adatta l'immagine al contenitore */
+    border-radius: var(--border-radius, 8px);
     cursor: pointer;
-    transition: transform var(--transition-speed) ease, opacity var(--transition-speed) ease;
-    opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.9;
 }
 
 .thumbnail-photos img:hover {
@@ -39,57 +64,189 @@
     opacity: 1;
 }
 
+
+/* Overlay Slider */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    z-index: 1000;
+}
+
+#slider-overlay{
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#slider-overlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.overlay-content {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    text-align: center;
+    /* Imposta un’altezza relativa alla viewport per garantire spazio sufficiente all'immagine */
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Evita scrollbar */
+}
+
+.slides-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 80%; /* La container occupa tutto lo spazio verticale disponibile */
+}
+
+.slide {
+    flex: 0 0 100%; /* Ogni slide occupa esattamente il 100% della larghezza visibile */
+    display: flex;
+    justify-content: center; /* Centra il contenuto */
+    align-items: center; /* Centra verticalmente */
+    margin: 0; /* Evita margini che creano spazi indesiderati */
+    padding: 0; /* Evita padding che causano spostamenti */
+    box-sizing: border-box; /* Assicura che padding e bordi siano inclusi nelle dimensioni */
+}
+
+.slide img {
+    max-width: 100%; /* L'immagine si adatta alla larghezza della slide */
+    max-height: 100%; /* L'immagine si adatta all'altezza della slide */
+    object-fit: contain; /* Mantiene le proporzioni senza distorcerle */
+}
+
+/* Pulsanti e chiusura rimangono invariati ma centrati rispetto alla nuova disposizione */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1010;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1010;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+
+.navigation-dots {
+    display: flex; /* Posiziona i pallini orizzontalmente */
+    justify-content: center; /* Centra i pallini sotto lo slider */
+    align-items: center;
+    gap: 0.5rem;
+    position: relative; /* Posizionato rispetto al contenitore */
+    z-index: 99999; /* Assicurati che siano sopra altri elementi */
+    height: 4vh;
+}
+
+.navigation-dots .dot {
+    width: 10px;
+    height: 10px;
+    background-color: grey;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 99999;
+}
+
+.navigation-dots .dot.active {
+    background-color: white; /* Colore del pallino attivo */
+    z-index: 99999;
+}
+
+
+
+/* Details Section */
 /* Details Section */
 .details {
     padding: 2rem;
     background-color: #ffffff;
-    border-radius: var(--border-radius);
-    box-shadow: var(--card-shadow);
-    transition: box-shadow var(--transition-speed) ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
 }
 
 .details:hover {
-    box-shadow: var(--card-hover-shadow);
+    box-shadow: var(--card-hover-shadow, 0 6px 10px rgba(0, 0, 0, 0.2));
 }
 
 .details h1 {
     font-size: 2.5rem;
-    color: var(--dark-gray);
+    color: #333;
     margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .price {
     font-size: 2rem;
-    color: var(--primary-color);
+    color: #ff6f61;
     margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .property-info p {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
-    color: var(--text-color);
-}
-
-.description {
-    margin-top: 2rem;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .description h2,
-.seller-contact h2 {
+.seller-contact h2,
+.open-house h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: var(--dark-gray);
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .description p,
 .seller-contact p {
     font-size: 1.1rem;
     line-height: 1.6;
-    color: var(--text-color);
-}
-
-.seller-contact {
-    margin-top: 2rem;
+    color: #666;
 }
 
 .map-link {
@@ -98,17 +255,156 @@
 }
 
 .map-link .btn-primary {
-    background-color: var(--primary-color);
+    background-color: #ff6f61;
     padding: 0.75rem 2rem;
     font-size: 1.2rem;
-    border-radius: var(--border-radius);
-    transition: background-color var(--transition-speed) ease, transform 0.3s ease;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .map-link .btn-primary:hover {
-    background-color: var(--secondary-color);
+    background-color: #333;
     transform: scale(1.05);
 }
+
+/* Open House Booking */
+.open-house {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.open-house form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.open-house label {
+    font-size: 1.1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.open-house input,
+.open-house select {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.open-house button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.open-house button:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+.description {
+    margin-top: 2rem;
+}
+
+
+.seller-contact {
+    margin-top: 2rem;
+}
+
+.book-link {
+    margin-top: 2.5rem;
+    text-align: center;
+    background-color: #ff6f61;
+    padding: 0.75rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 25%;
+}
+
+
+
+/* Wrapper per centralizzare e stilizzare */
+.date-input-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Stile per il campo input date */
+  .styled-date-input {
+    -webkit-appearance: none; /* Rimuove lo stile di default */
+    -moz-appearance: none;
+    appearance: none;
+  
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+  
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 12px 16px;
+    padding-right: 40px; /* Spazio per l'icona */
+  
+    background-color: #f9f9f9;
+    color: #333;
+  
+    transition: border 0.3s, background-color 0.3s, box-shadow 0.3s;
+    outline: none;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Stile per hover e focus */
+  .styled-date-input:hover {
+    border-color: #0078d7;
+    background-color: #fff;
+  }
+  
+  .styled-date-input:focus {
+    border-color: #0078d7;
+    box-shadow: 0px 0px 8px rgba(0, 120, 215, 0.5);
+  }
+  
+  /* Aggiunta di un'icona per il calendario */
+  .date-input-wrapper::after {
+    content: "\1F4C5"; /* Codice Unicode per l'icona calendario 📅 */
+    font-size: 18px;
+    color: #0078d7;
+  
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Non cliccabile */
+  }
+  
 
 /* Responsive Design */
 @media (min-width: 768px) {
@@ -116,13 +412,14 @@
         flex-direction: row;
     }
 
-    .main-photo, .thumbnail-photos {
-        width: 50%;
+    .main-photo {
+        flex: 2;
     }
 
     .thumbnail-photos {
+        flex: 1;
         flex-direction: column;
-        gap: 1rem;
+        gap: 10px;
     }
 
     .thumbnail-photos img {
@@ -133,3 +430,4 @@
         padding: 3rem;
     }
 }
+
