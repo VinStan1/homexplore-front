@@ -409,6 +409,16 @@ function hideConnections() {
     features: [],
   });
 
+  map.getSource("lines-neighborhood").setData({
+    type: "FeatureCollection",
+    features: [],
+  });
+
+  map.getSource("lines-city").setData({
+    type: "FeatureCollection",
+    features: [],
+  });
+
   // Rimuovi marker POI dinamicamente aggiunti
   pois.forEach((poi) => {
     const markerElements = document.querySelectorAll(".marker");
