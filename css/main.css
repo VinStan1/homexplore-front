@@ -80,7 +80,7 @@
 
 .testimonials h2 {
     font-size: 2.5rem;
-    color: #333;
+    color: #ff6f61;
     margin-bottom: 2rem;
 }
 
@@ -222,5 +222,9 @@
 }
 
 .gallery h2{
-    color: black;
+    color: #ff6f61;
+}
+
+.gallery{
+    background: linear-gradient(to bottom, #f0f4f8, #e6edf3);
 }

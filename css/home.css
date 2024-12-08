@@ -4,7 +4,7 @@
 :root {
     --primary-color: #1e90ff;           /* Modern Blue */
     --secondary-color: #104e8b;         /* Darker Blue */
-    --accent-color: #ff7f50;            /* Coral */
+    --accent-color: #ff6f61;            /* Coral */
     --background-color: #f5f7fa;
     --light-gray: #e0e0e0;
     --dark-gray: #333333;
@@ -82,7 +82,7 @@ button {
 }
 
 .btn-secondary:hover {
-    background-color: #ff5722;
+    background-color: #ff6f61;
     transform: translateY(-3px);
 }
 
@@ -92,146 +92,6 @@ main {
 
 /* Hero Section */
 /* ... Mantenere gli stili esistenti per la sezione hero ... */
-
-/* Search Section */
-.search-section {
-    background-color: #ffffff;
-    padding: var(--section-padding);
-    max-width: var(--section-max-width);
-    margin: -100px auto 2rem;
-    position: relative;
-    z-index: 10;
-    box-shadow: var(--card-shadow);
-    border-radius: var(--border-radius);
-    transition: box-shadow var(--transition-speed) ease;
-}
-
-.search-section:hover {
-    box-shadow: var(--card-hover-shadow);
-}
-
-.search-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    color: var(--dark-gray);
-}
-
-.search-section .card {
-    background-color: var(--light-gray);
-    padding: var(--card-padding);
-    border-radius: var(--border-radius);
-    max-width: 800px;
-    margin: 0 auto;
-    box-shadow: var(--card-shadow);
-    transition: box-shadow var(--transition-speed) ease, transform 0.3s ease;
-}
-
-.search-section .card:hover {
-    box-shadow: var(--card-hover-shadow);
-    transform: translateY(-5px);
-}
-
-/* Form di Ricerca */
-.search-form {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--text-color);
-}
-
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    border: 2px solid var(--light-gray);
-    border-radius: var(--border-radius);
-    font-size: 1rem;
-    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-}
-
-.form-group input:focus,
-.form-group select:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 10px rgba(30, 144, 255, 0.2);
-}
-
-/* Pulsante "Mostra/Nascondi Parametri Avanzati" */
-#toggle-advanced {
-    background-color: var(--secondary-color);
-    color: #fff;
-    padding: 0.75rem 2rem;
-    border: none;
-    border-radius: var(--border-radius);
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color var(--transition-speed) ease, transform 0.3s ease, box-shadow var(--transition-speed) ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-#toggle-advanced i {
-    margin-right: 0.5rem;
-    transition: transform var(--transition-speed) ease;
-}
-
-#toggle-advanced.active {
-    background-color: var(--accent-color);
-}
-
-#toggle-advanced:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Parametri Avanzati */
-#advanced-params {
-    display: none; /* Nascondi inizialmente */
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 1rem;
-    transition: opacity 0.3s ease, max-height 0.3s ease;
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-}
-
-#advanced-params.active {
-    display: grid; /* Mostra come griglia */
-    opacity: 1;
-    max-height: 1000px; /* Valore sufficientemente alto per permettere l'espansione */
-    overflow: visible;
-}
-
-/* Responsività per Parametri Avanzati */
-@media (min-width: 576px) {
-    #advanced-params {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 992px) {
-    #advanced-params {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
 
 /* Button Group */
 .button-group {
