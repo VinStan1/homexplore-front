@@ -4,73 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search - HomeXplore</title>
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Font Awesome for Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/layout.css" />
-    <link rel="stylesheet" href="css/home.css" />
-    <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
     <!-- Header -->
-    <header>
-      <div class="container">
-        <div class="logo" style="display: flex">
-          <a href="main.html"
-            ><img
-              src="images/logoblackandwhite.png"
-              alt="HomeXplore Logo"
-              style="
-                width: 40px;
-                height: auto;
-                object-fit: contain;
-                vertical-align: middle;
-              "
-            />
-            <span style="vertical-align: middle">HomeXplore</span></a
-          >
-        </div>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-        <label for="nav-toggle" class="nav-toggle-label">
-          <span></span>
-        </label>
-        <nav>
-          <ul>
-            <li>
-              <a href="main.html"><i class="fas fa-home"></i> Home</a>
-            </li>
-            <li>
-              <a href="index.html">
-                <i class="fas fa-search"></i>
-                Search</a
-              >
-            </li>
-            <li>
-              <a href="contact.html"
-                ><i class="fas fa-envelope"></i> Contact us</a
-              >
-            </li>
-            <li>
-              <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
-            </li>
-            <li>
-              <a href="register.html"
-                ><i class="fas fa-user-plus"></i> Sign up</a
-              >
-            </li>
-          </ul>
-        </nav>
-      </div>
+    <header id="header">
     </header>
 
     <!-- Main Content -->
@@ -173,10 +111,22 @@
       <section class="results-section container">
         <div class="results-title">
           <h2>Search Results for Manhattan, New York</h2>
-          <a href="map.html?city=NewYork&neighborhood=Manhattan" class="btn-primary">
-            <i class="fas fa-globe-americas"></i>
-            Explore the area
-          </a>
+          <div class="button-group">
+            <a
+              href="map.html?city=NewYork&neighborhood=Manhattan"
+              class="btn-primary"
+            >
+              <i class="fas fa-globe-americas"></i>
+              Explore the area
+            </a>
+            <a
+              href="analytics.html?city=NewYork&neighborhood=Manhattan"
+              class="btn-third"
+            >
+              <i class="fas fa-chart-bar"></i>
+              Show analytics
+            </a>
+          </div>
         </div>
 
         <div class="results-grid">
@@ -234,22 +184,7 @@
     </main>
 
     <!-- Footer -->
-    <footer>
-      <div class="container">
-        <p>&copy; 2024 HomeXplore. All rights reserved.</p>
-        <ul class="footer-links">
-          <li>
-            <a href="privacy.html"
-              ><i class="fas fa-user-shield"></i> Privacy Policy</a
-            >
-          </li>
-          <li>
-            <a href="terms.html"
-              ><i class="fas fa-file-contract"></i> Terms of Service</a
-            >
-          </li>
-        </ul>
-      </div>
+    <footer id="footer">
     </footer>
     <script>
       document
@@ -266,5 +201,8 @@
           }
         });
     </script>
+    <script src="components/headLinks.js"></script>
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
   </body>
 </html>

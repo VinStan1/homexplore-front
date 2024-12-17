@@ -1,87 +1,59 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profilo Acquirente - Nome del Progetto</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome per le icone -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Fogli di stile CSS -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/user.css">
-    <link rel="stylesheet" href="css/footer.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buyer Profile - HomeXplore</title>
+    <link rel="stylesheet" href="css/user.css" />
+  </head>
+  <body>
     <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="index.html"><i class="fas fa-user-alt"></i> Nome del Progetto</a>
-            </div>
-            <input type="checkbox" id="nav-toggle" class="nav-toggle">
-            <label for="nav-toggle" class="nav-toggle-label">
-                <span></span>
-            </label>
-            <nav>
-                <ul>
-                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="about.html"><i class="fas fa-info-circle"></i> Chi Siamo</a></li>
-                    <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Servizi</a></li>
-                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contatti</a></li>
-                    <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Accedi</a></li>
-                    <li><a href="register.html"><i class="fas fa-user-plus"></i> Registrati</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header id="header">    
     </header>
 
     <!-- Main Content -->
-    <main class="buyer-main container">
-        <!-- Titolo Sezione -->
-        <section class="section-header">
-            <h1><i class="fas fa-shopping-cart"></i> Profilo Acquirente</h1>
-        </section>
+    <main class="seller-main">
+      <!-- Section Title -->
+      <section class="seller-header">
+        <h1><i class="fas fa-user-tie"></i> Buyer Profile</h1>
+      </section>
 
-        <!-- Azioni Acquirente -->
-        <section class="buyer-actions">
-            <!-- Modifica Profilo -->
-            <div class="action-card">
-                <i class="fas fa-edit fa-3x action-icon"></i>
-                <h2>Modifica Profilo</h2>
-                <p>Aggiorna le tue informazioni personali.</p>
-                <a href="edit_user.html" class="btn-primary"><i class="fas fa-user-edit"></i> Modifica</a>
-            </div>
+      <!-- Seller Actions -->
+      <section class="seller-actions">
+        <!-- Edit Profile -->
+        <div class="action-card">
+          <i class="fas fa-edit fa-3x action-icon"></i>
+          <h2>Edit Profile</h2>
+          <p>Update your personal information.</p>
+          <a href="edit_user.html" class="btn-secondary"
+            ><i class="fas fa-user-edit"></i> Edit</a
+          >
+        </div>
 
-            <!-- I Miei Preferiti -->
-            <div class="action-card">
-                <i class="fas fa-heart fa-3x action-icon"></i>
-                <h2>I Miei Preferiti</h2>
-                <p>Visualizza le case che hai aggiunto ai preferiti.</p>
-                <a href="favourites.html" class="btn-primary"><i class="fas fa-eye"></i> Visualizza</a>
-            </div>
+        <!-- Favourite Properties -->
+        <div class="action-card">
+          <i class="fas fa-heart fa-3x action-icon"></i>
+          <h2>Favourite Properties</h2>
+          <p>View the properties you added to your favourites.</p>
+          <a href="favourites.html" class="btn-primary"><i class="fas fa-eye"></i> View</a>
+        </div>
 
-            <!-- Le Mie Prenotazioni -->
-            <div class="action-card">
-                <i class="fas fa-book fa-3x action-icon"></i>
-                <h2>Le Mie Prenotazioni</h2>
-                <p>Gestisci le tue prenotazioni di case.</p>
-                <a href="active_bookings.html" class="btn-primary"><i class="fas fa-clipboard-list"></i> Visualizza</a>
-            </div>
-        </section>
+        <!-- Sold Properties -->
+        <div class="action-card">
+          <i class="fas fa-book fa-3x action-icon"></i>
+          <h2>My Reservations</h2>
+          <p>Manage your reservations for the Open House.</p>
+          <a href="active_bookings.html" class="btn-primary"><i class="fas fa-clipboard-list"></i> View</a>
+        </div>
+
+      </section>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Nome del Progetto. Tutti i diritti riservati.</p>
-            <ul class="footer-links">
-                <li><a href="privacy.html"><i class="fas fa-user-shield"></i> Privacy Policy</a></li>
-                <li><a href="terms.html"><i class="fas fa-file-contract"></i> Termini di Servizio</a></li>
-            </ul>
-        </div>
+    <footer id="footer">
     </footer>
-</body>
+    <script src="components/headLinks.js"></script>
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+  </body>
 </html>
