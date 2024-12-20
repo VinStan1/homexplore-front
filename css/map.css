@@ -45,27 +45,6 @@ section {
   height: 100%; /* Altezza dinamica considerando header e footer */
 }
 
-/* Footer */
-footer {
-  background: #333;
-  color: #fff;
-  padding: 1rem 0;
-  text-align: center;
-}
-
-footer ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-footer ul li a {
-  text-decoration: none;
-  color: #fff;
-}
 
 /* Popup per la mappa */
 .mapboxgl-popup-content {
