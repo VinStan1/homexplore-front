@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Array con i link da aggiungere
     const links = [
       {
+        rel: "icon",
+        href: "favicon.ico"
+      },
+      {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap",
       },
