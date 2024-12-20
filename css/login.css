@@ -1,19 +1,20 @@
-/* login.css */
-
 /* Login Container */
 .login-container {
     width: 100%;
-    max-width: 400px;
-    margin: 3rem auto;
+    max-width: 600px; /* Limite massimo della larghezza */
+    margin: 1rem auto;
     background-color: var(--background-color);
-    padding: 2.5rem;
+    padding: 1.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 0.5rem;
     transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+
+    /* Assicura che il background si adatti */
+    box-sizing: border-box;
+    overflow: hidden; /* Nascondi eventuali overflow */
 }
 
 .login-container:hover {
-    transform: translateY(-10px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
@@ -24,10 +25,18 @@
     font-size: 2rem;
 }
 
-.form-group {
+/* Flexbox for two fields per row */
+.form-row {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap; /* Gestisce l'overflow */
+    gap: 1rem;
     margin-bottom: 1.5rem;
+}
+
+/* Ogni campo occupa il 50% della riga */
+.form-row .form-group {
+    flex: 1 1 calc(50% - 0.5rem); /* Calcolo per garantire il gap */
+    min-width: 150px; /* Previene campi troppo stretti */
 }
 
 .form-group label {
@@ -35,20 +44,28 @@
     font-weight: 500;
 }
 
-.login-container input {
+.login-container input,
+.login-container select {
     padding: 0.75rem;
     border: 1px solid #cccccc;
     border-radius: 0.25rem;
     font-size: 1rem;
     transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+
+    /* Assicura che gli input rispettino il contenitore */
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.login-container input:focus {
+/* Focus styles */
+.login-container input:focus,
+.login-container select:focus {
     border-color: var(--primary-color);
     box-shadow: 0 0 5px rgba(0, 102, 204, 0.2);
     outline: none;
 }
 
+/* Button styling */
 .login-container button {
     width: 100%;
     padding: 0.75rem;
@@ -66,6 +83,7 @@
     background-color: var(--secondary-color);
 }
 
+/* Redirect text styles */
 .redirect-text {
     text-align: center;
     margin-top: 1rem;

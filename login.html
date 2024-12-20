@@ -1,67 +1,46 @@
 <!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <title>Nome del Progetto - Login</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HomeXplore - Login</title>
+    <link rel="stylesheet" href="css/login.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
     <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">Nome del Progetto</a>
-            </div>
-            <nav>
-                <input type="checkbox" id="nav-toggle" class="nav-toggle">
-                <label for="nav-toggle" class="nav-toggle-label">
-                    <span></span>
-                </label>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">Chi Siamo</a></li>
-                    <li><a href="services.html">Servizi</a></li>
-                    <li><a href="contact.html">Contatti</a></li>
-                    <li><a href="register.html">Registrati</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <header id="header"></header>
 
     <!-- Main Content -->
     <main>
-        <div class="login-container">
-            <h1>Accedi</h1>
-            <form action="#" method="post">
+      <div class="login-container">
+        <h1>Login</h1>
+        <form action="#" method="post">
+            <div class="form-row">
                 <div class="form-group">
-                    <label for="username"><i class="fas fa-user"></i> Nome Utente</label>
-                    <input type="text" id="username" name="username" placeholder="Inserisci il tuo nome utente" required>
+                    <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 </div>
+            </div>
+            <div class="form-row">
                 <div class="form-group">
                     <label for="password"><i class="fas fa-lock"></i> Password</label>
-                    <input type="password" id="password" name="password" placeholder="Inserisci la tua password" required>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
                 </div>
-                <button type="submit">Accedi</button>
-            </form>
-            <p class="redirect-text">Non hai un account? <a href="register.html">Registrati qui</a></p>
-        </div>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        
+        <p class="redirect-text">
+          You don't have an account? <a href="register.html">Register here</a>
+        </p>
+      </div>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Nome del Progetto. Tutti i diritti riservati.</p>
-            <ul class="footer-links">
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="terms.html">Termini di Servizio</a></li>
-            </ul>
-        </div>
-    </footer>
-</body>
+    <footer id="footer"></footer>
+    <script src="components/headLinks.js"></script>
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+  </body>
 </html>
