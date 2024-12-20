@@ -5,7 +5,7 @@ footer {
     background-color: var(--footer-bg);
     color: #ffffff;
     text-align: center;
-    padding: 2rem 2rem;
+    height: 80px;
     position: relative;
     bottom: 0;
     width: 100%;
@@ -16,8 +16,10 @@ footer .container {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    vertical-align: middle;
     flex-wrap: wrap;
     gap: 2rem;
+    height: 100%;
 }
 
 /* Links nel Footer */

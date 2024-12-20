@@ -150,6 +150,7 @@ nav ul li a:hover {
 /* Contenuto Principale */
 main {
     margin-top: 80px; /* Altezza dell'header */
+    min-height: calc(100vh - 160px); /* Altezza minima */
 }
 
 /* Uniform Section Spacing */
