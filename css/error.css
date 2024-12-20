@@ -46,3 +46,7 @@
     background-color: var(--btn-hover-bg);
     transform: scale(1.05);
 }
+
+main {
+    padding: 0;
+}
