@@ -17,6 +17,7 @@ main {
   flex-direction: column;
   height: 100%;
   padding: 0;
+  min-height: calc(100vh - 160px);
 }
 
 section {
@@ -36,7 +37,7 @@ section {
 }
 
 .map-section {
-  height: 72vh;
+  height: 68vh;
 }
 
 #map {
