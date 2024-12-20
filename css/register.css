@@ -3,7 +3,7 @@
     width: 100%;
     max-width: 600px; /* Limite massimo della larghezza */
     margin: 1rem auto;
-    background-color: var(--background-color);
+    background: linear-gradient(135deg, #ffffff, #f9fafb);
     padding: 1.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 0.5rem;
@@ -41,7 +41,7 @@
 
 .form-group label {
     margin-bottom: 0.5rem;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 .register-container input,
@@ -98,4 +98,8 @@
 
 .redirect-text a:hover {
     color: var(--secondary-color);
+}
+
+.register-container i {
+    color: #ff6f61;
 }
