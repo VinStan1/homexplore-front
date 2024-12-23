@@ -3,32 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Favourites - HomeXplore</title>
+    <title>Buyer Reservations - HomeXplore</title>
     <!-- Fogli di stile CSS -->
-    <link rel="stylesheet" href="css/favourites.css" />
+    <link rel="stylesheet" href="css/buyer_reservations.css" />
   </head>
   <body>
     <!-- Header -->
     <header id="header"></header>
     <!-- Main Content -->
-    <main class="favourites-main">
+    <main class="reservations-main">
       <!-- Section Title -->
-      <section class="favourites-header">
-        <h1><i class="fas fa-user-tie"></i> Favourite properties</h1>
+      <section class="reservations-header">
+        <h1><i class="fas fa-user-tie"></i>Open House Reservations</h1>
       </section>
 
-      <!-- Favourites Actions -->
-      <section class="favourites-actions">
-        <!-- Example Result Card -->
+      <!-- Reservations Actions -->
+      <section class="reservations-actions">
         <div class="gallery-item">
           <a href="detail_home.html?id=1">
             <img src="images/index/1.png" alt="Property 1" />
             <div class="property-info">
               <p class="type">Apartment</p>
               <p class="address">123 Main St, Manhattan, New York, NY</p>
-              <p class="area">1,200 sqft</p>
               <p class="price">$1,200,000</p>
-              <button class="btn-remove"><i class="fas fa-times"></i> Remove</button>
+              <p class="reservation-date">
+                <i class="fas fa-calendar-alt"></i> 2024-12-25, 15:00
+              </p>
+              <button class="btn-remove">
+                <i class="fas fa-times"></i> Cancel
+              </button>
             </div>
           </a>
         </div>
@@ -38,9 +41,13 @@
             <div class="property-info">
               <p class="type">Apartment</p>
               <p class="address">456 Main St, Manhattan, New York, NY</p>
-              <p class="area">800 sqft</p>
               <p class="price">$439,000</p>
-              <button class="btn-remove"><i class="fas fa-times"></i> Remove</button>
+              <p class="reservation-date">
+                <i class="fas fa-calendar-alt"></i> 2024-12-28, 10:00
+              </p>
+              <button class="btn-remove">
+                <i class="fas fa-times"></i> Cancel
+              </button>
             </div>
           </a>
         </div>
@@ -50,9 +57,13 @@
             <div class="property-info">
               <p class="type">Apartment</p>
               <p class="address">111 Main St, Manhattan, New York, NY</p>
-              <p class="area">1,397 sqft</p>
               <p class="price">$2,435,000</p>
-              <button class="btn-remove"><i class="fas fa-times"></i> Remove</button>
+              <p class="reservation-date">
+                <i class="fas fa-calendar-alt"></i> 2025-01-03, 14:00
+              </p>
+              <button class="btn-remove">
+                <i class="fas fa-times"></i> Cancel
+              </button>
             </div>
           </a>
         </div>
