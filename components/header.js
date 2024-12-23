@@ -1,4 +1,4 @@
-const headerHTML = (isAuthenticated) => `
+const headerHTML = (isAuthenticated, userType) => `
 <script src="auth.js"></script>
 <div class="container">
     <div class="logo" style="display: flex">
@@ -40,6 +40,9 @@ const headerHTML = (isAuthenticated) => `
               <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
             </li>
             <li>
+              <a href="#" id="dashboard-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            </li>
+            <li>
               <a href="#" id="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
             </li>
           `
@@ -59,18 +62,42 @@ const headerHTML = (isAuthenticated) => `
 document.addEventListener("DOMContentLoaded", () => {
   // Check if user is authenticated (token exists in localStorage)
   const isAuthenticated = localStorage.getItem("authToken");
+  const userType = localStorage.getItem("userType"); // Get the userType from localStorage
 
   // Inject the header with the correct links
-  document.getElementById("header").innerHTML = headerHTML(!!isAuthenticated);
+  document.getElementById("header").innerHTML = headerHTML(!!isAuthenticated, userType);
 
-  // Logout functionality
+  // Add functionality for logout
   if (isAuthenticated) {
     const logoutLink = document.getElementById("logout-link");
     logoutLink.addEventListener("click", (event) => {
       event.preventDefault();
       localStorage.removeItem("authToken"); // Remove the token
+      localStorage.removeItem("userType"); // Remove the user type
+      localStorage.removeItem("email"); // Remove the email
       alert("You have been logged out.");
       window.location.href = "index.html"; // Redirect to the home page
     });
+
+    // Dashboard link logic based on userType
+    const dashboardLink = document.getElementById("dashboard-link");
+    if (dashboardLink) {
+      dashboardLink.addEventListener("click", (event) => {
+        event.preventDefault();
+        switch (userType) {
+          case "seller":
+            window.location.href = "seller.html";
+            break;
+          case "buyer":
+            window.location.href = "buyer.html";
+            break;
+          case "superuser":
+            window.location.href = "superuser.html";
+            break;
+          default:
+            alert("Unknown user type. Please contact support.");
+        }
+      });
+    }
   }
 });

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile - HomeXplore</title>
+    <link rel="stylesheet" href="css/user.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header"></header>
+
+    <!-- Main Content -->
+    <main class="seller-main">
+        <!-- Section Title -->
+        <section class="seller-header">
+          <h1><i class="fas fa-user-circle"></i> Profile</h1>
+        </section>
+  
+        <!-- Seller Actions -->
+        <section class="seller-actions">
+  
+          <!-- Properties for Sale -->
+          <div class="profile-card">
+            <div class="profile-header">
+              <i class="fas fa-user-circle fa-4x profile-avatar"></i>
+              <p id="profile-type"><strong>User Type:</strong> Buyer</p>
+            </div>
+            <div class="profile-details">
+              <p>
+                <i class="fas fa-envelope"></i> <strong>Email:</strong>
+                <span id="profile-email">john.doe@example.com</span>
+              </p>
+              <p>
+                <i class="fas fa-phone"></i> <strong>Phone:</strong>
+                <span id="profile-phone">+1 123 456 7890</span>
+              </p>
+              <div id="additional-fields"></div>
+              <!-- Additional fields will be populated dynamically -->
+            </div>
+
+            <div class="profile-actions">
+              <a href="edit_profile.html" class="btn-secondary"
+                >Edit Information</a
+              >
+            </div>
+          </div>
+        </section>
+      </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <!-- Scripts -->
+    <script src="components/headLinks.js"></script>
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="js/profile.js"></script>
+    <!-- Updated dynamic logic -->
+  </body>
+</html>

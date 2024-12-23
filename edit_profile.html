@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Edit Profile - HomeXplore</title>
+    <link rel="stylesheet" href="css/register.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      function toggleFields() {
+        const role = document.getElementById("role").value;
+        const buyerFields = document.getElementsByClassName("buyer-fields");
+        const sellerFields = document.getElementById("seller-fields");
+        console.log(Object.keys(buyerFields));
+
+        if (role === "buyer") {
+          Object.keys(buyerFields).forEach(
+            (field) => (buyerFields[field].style.display = "flex")
+          );
+          sellerFields.style.display = "none";
+        } else if (role === "seller") {
+          Object.keys(buyerFields).forEach(
+            (field) => (buyerFields[field].style.display = "none")
+          );
+          sellerFields.style.display = "flex";
+        } else {
+          Object.keys(buyerFields).forEach(
+            (field) => (buyerFields[field].style.display = "none")
+          );
+          sellerFields.style.display = "none";
+        }
+      }
+
+      window.addEventListener("DOMContentLoaded", () => {
+        localStorage.getItem("email");
+        const email = document.getElementById("email");
+        email.value = localStorage.getItem("email");
+        toggleFields();
+        document
+          .getElementById("role")
+          .addEventListener("change", toggleFields);
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header"></header>
+
+    <!-- Main Content -->
+    <main>
+      <h1 style="text-align: center">Edit Profile</h1>
+      <div class="register-container">
+        <form action="#" method="post">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email"><i class="fas fa-envelope"></i> Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="password"><i class="fas fa-lock"></i> New Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="confirm-password"
+                ><i class="fas fa-lock"></i> Confirm New Password</label
+              >
+              <input
+                type="password"
+                id="confirm-password"
+                name="confirm-password"
+                placeholder="Confirm your password"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="role"><i class="fas fa-user-tag"></i> Role</label>
+              <select id="role" name="role" required>
+                <option disabled value="">Select your role</option>
+                <option value="buyer">Buyer</option>
+                <option value="seller">Seller</option>
+              </select>
+            </div>
+          </div>
+          <div class="buyer-fields form-row" style="display: none">
+            <div class="form-group">
+              <label for="first-name"
+                ><i class="fas fa-user"></i> First Name</label
+              >
+              <input
+                type="text"
+                id="first-name"
+                name="first-name"
+                placeholder="Enter your first name"
+                value="John"
+              />
+            </div>
+            <div class="form-group">
+              <label for="last-name"
+                ><i class="fas fa-id-card"></i> Last Name</label
+              >
+              <input
+                type="text"
+                id="last-name"
+                name="last-name"
+                placeholder="Enter your last name"
+                value="Doe"
+                required
+              />
+            </div>
+          </div>
+          <div class="buyer-fields form-row" style="display: none">
+            <div class="form-group">
+              <label for="age"><i class="fas fa-birthday-cake"></i> Age</label>
+              <input
+                type="text"
+                id="age"
+                name="age"
+                value="30"
+                placeholder="Enter your first age"
+              />
+            </div>
+            <div class="form-group">
+              <label for="sex"><i class="fas fa-venus-mars"></i> Sex</label>
+              <input
+                type="text"
+                id="sex"
+                name="sex"
+                placeholder="Enter your sex"
+                value="Male"
+                required
+              />
+            </div>
+          </div>
+          <div id="seller-fields" class="form-row" style="display: none">
+            <div class="form-group">
+              <label for="agency-name"
+                ><i class="fas fa-building"></i> Agency Name</label
+              >
+              <input
+                type="text"
+                id="agency-name"
+                name="agency-name"
+                placeholder="Enter your agency name"
+                value="Doe Realty"
+              />
+            </div>
+          </div>
+          <button class="btn-secondary" href="profile.html">Apply Changes</button>
+        </form>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+    <script src="components/headLinks.js"></script>
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+  </body>
+</html>

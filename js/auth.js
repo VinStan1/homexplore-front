@@ -11,6 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (email && password) {
       // Save a mock token to localStorage
       localStorage.setItem('authToken', JSON.stringify({ authenticated: true }));
+      // Save the user type to localStorage
+      if (email === 'seller@seller.com') localStorage.setItem('userType', 'seller');
+      else if (email === 'buyer@buyer.com') localStorage.setItem('userType', 'buyer');
+      else localStorage.setItem('userType', 'superuser');
+      // Save the email to localStorage
+      localStorage.setItem('email', email);
       // Redirect or refresh the page (optional)
       if (email === 'seller@seller.com') window.location.href = 'seller.html';
       else if (email=== 'buyer@buyer.com') window.location.href = 'buyer.html';
@@ -19,15 +25,4 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Please enter valid credentials.');
     }
   });
-
-  // Logout button handler (add a button in your HTML for logout functionality)
-  const logoutButton = document.getElementById('logout-button');
-  if (logoutButton) {
-    logoutButton.addEventListener('click', () => {
-      localStorage.removeItem('authToken'); // Remove the token from localStorage
-      alert('Logout successful! Token removed from localStorage.');
-      // Redirect or refresh the page (optional)
-      window.location.href = 'main.html';
-    });
-  }
 });
