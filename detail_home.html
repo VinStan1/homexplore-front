@@ -8,8 +8,7 @@
   </head>
   <body>
     <!-- Header -->
-    <header id="header">    
-    </header>
+    <header id="header"></header>
 
     <!-- Main Content -->
     <main class="detail-main container">
@@ -21,6 +20,13 @@
             src="images/detail_home/thumbnail.png"
             alt="Foto Principale della Casa"
           />
+          <!-- Favourites Button -->
+          <div id="favourites-container">
+            <button id="favourites-button" class="favourites-button">
+              <i id="favourites-icon" class="far fa-star"></i>
+              <span id="favourites-text">Add to favourites</span>
+            </button>
+          </div>
         </div>
         <div class="thumbnail-photos">
           <img src="images/detail_home/1.png" alt="Foto 1" />
@@ -78,8 +84,14 @@
           <p><i class="fas fa-bed"></i> <strong>Bedrooms:</strong> 3</p>
           <p><i class="fas fa-bath"></i> <strong>Bathrooms:</strong> 3</p>
           <p><i class="fas fa-home"></i> <strong>Type:</strong> Apartment</p>
-          <p><i class="fas fa-map-marker-alt"></i> <strong>Neighborhood:</strong> Upper West Side</p>
-          <p><i class="fas fa-calendar-alt"></i> <strong>Days on HomeXplore:</strong> 23</p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i>
+            <strong>Neighborhood:</strong> Upper West Side
+          </p>
+          <p>
+            <i class="fas fa-calendar-alt"></i>
+            <strong>Days on HomeXplore:</strong> 23
+          </p>
         </div>
         <div class="description">
           <h2><i class="fas fa-info-circle"></i> Description</h2>
@@ -90,6 +102,7 @@
             the ideal choice for those seeking elegance and convenience.
           </p>
         </div>
+
         <div class="seller-contact">
           <h2><i class="fas fa-phone"></i> Contact the seller</h2>
           <p><strong>Agency:</strong> Real Estate XYZ</p>
@@ -120,8 +133,7 @@
     </main>
 
     <!-- Footer -->
-    <footer id="footer">
-    </footer>
+    <footer id="footer"></footer>
     <script src="components/headLinks.js"></script>
     <script src="components/header.js"></script>
     <script src="components/footer.js"></script>
