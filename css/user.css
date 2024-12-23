@@ -6,7 +6,6 @@
 main {
     font-family: 'Poppins', sans-serif;
     background-color: var(--light-gray);
-    margin-top: 5vh;
     padding: 0;
     color: var(--text-color);
     transition: background-color var(--transition-speed), color var(--transition-speed);
