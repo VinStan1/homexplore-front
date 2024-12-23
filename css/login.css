@@ -101,5 +101,5 @@
 }
 
 .login-container i {
-    color: #ff6f61;
+    color: var(--secondary-color);
 }

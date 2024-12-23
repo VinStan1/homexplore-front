@@ -606,14 +606,6 @@ main {
     }
 }
 
-/* user.css */
-
-/* ...existing styles... */
-
-/* user.css */
-
-/* ...existing styles... */
-
 /* Stili per il Form di Aggiunta Proprietà */
 .add-property-form {
     max-width: 600px;
@@ -742,13 +734,9 @@ main {
     }
 }
 
-/* Stili per le Pagine Superuser, Buyer e Seller */
-/* .superuser-main, .buyer-main, .seller-main {
-    padding: var(--section-padding);
-} */
-
 .seller-main {
-    margin-top: 12vh;
+    margin-top: 90px;
+    min-height: calc(100vh - 160px - 10px);
 }
 
 .section-header h1 {
@@ -764,7 +752,6 @@ main {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    padding-bottom: 13.5vh;
 }
 
 .action-card {
@@ -885,10 +872,11 @@ main {
 .seller-header{
     display: flex;
     background-color: white;
-    padding: 1.2rem;
+    height: 100px;
+    padding-top:10px;
+    padding-bottom: 0;
     vertical-align: middle;
     font-size: 1.5rem;
-    margin-top: 2rem;
     padding-left: 2rem;
 }
 
@@ -901,7 +889,6 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
-    margin-top: 1rem;
     width: 100%;
 }
 
