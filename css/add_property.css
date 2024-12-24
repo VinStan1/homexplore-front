@@ -88,3 +88,23 @@
   .property-container i{
     color: var(--secondary-color);
   }
+
+
+  /* Open House Section */
+.property-container select,
+.property-container input[type="time"] {
+  padding: 0.75rem;
+  border: 1px solid #cccccc;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.property-container select:focus,
+.property-container input[type="time"]:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(0, 102, 204, 0.2);
+  outline: none;
+}
