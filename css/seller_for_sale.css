@@ -1,0 +1,346 @@
+.for-sale-header{
+    display: flex;
+    background-color: white;
+    height: 100px;
+    padding-top:10px;
+    padding-bottom: 0;
+    vertical-align: middle;
+    font-size: 1.5rem;
+    padding-left: 2rem;
+}
+
+.for-sale-header h1{
+    margin: 0;
+}
+
+.for-sale-actions{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.for-sale-main{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-gray);
+    margin-top: 90px;
+    padding: 0;
+    color: var(--text-color);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    width: 100%;
+    min-height: calc(100vh - 160px - 10px);
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px; /* Altezza uniforme per tutte le immagini */
+    object-fit: cover; /* Taglia l'immagine mantenendo le proporzioni */
+    border-radius: 8px 8px 0 0; /* Bordo arrotondato per la parte superiore */
+}
+
+.property-info {
+    padding: 1rem;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+}
+
+.property-info p {
+    margin: 0.5rem 0;
+}
+
+.property-info .address {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.property-info .price {
+    font-size: 1.2rem;
+    color: #ff6f61;
+    font-weight: bold;
+}
+
+.gallery h2{
+    color: black;
+}
+
+
+.property-info {
+    padding: 1.5rem;
+  }
+  
+  .property-info p {
+    margin: 0.5rem 0;
+  }
+  
+  .property-info .type {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .property-info .address {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .property-info .area {
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  .property-info .price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #ff6f61;
+  }
+
+  .btn-remove {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Spazio tra l'icona e il testo */
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #ff4d4d; /* Rosso */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .btn-remove i {
+    font-size: 16px; /* Dimensione della croce */
+    line-height: 1;
+  }
+  
+  .btn-remove:hover {
+    background-color: #e60000; /* Rosso più scuro al passaggio del mouse */
+  }
+  
+  
+  /* Gallery Item */
+  
+
+  .property-info {
+    padding: 1rem;
+    text-align: center;
+    background-color: #fff;
+  }
+  
+  .property-info p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Buttons */
+  .property-info button {
+    margin-top: 0.5rem;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .property-info button i {
+    font-size: 1rem;
+  }
+  
+  /* Edit Button */
+  .btn-secondary {
+    background-color: var(--primary-color);
+    color: #fff;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+  }
+  
+  /* Remove Button */
+  .btn-remove {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .btn-remove:hover {
+    background-color: #a71d2a;
+    transform: translateY(-2px);
+  }
+  
+  /* Open House Button */
+  .btn-openhouse {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .btn-openhouse:hover {
+    background-color: #1e7e34;
+    transform: translateY(-2px);
+  }
+  
+  /* Button Spacing */
+  .property-info button + button {
+    margin-left: 0.5rem;
+  }
+  
+
+ /* Popup Container */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Sfondo più scuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup.hidden {
+    display: none;
+  }
+  
+  .popup-content {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .popup-content h2 {
+    margin-bottom: 1rem;
+    color: #222;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .popup-content p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .popup-content h3 {
+    margin: 1.5rem 0 1rem;
+    color: var(--accent-color);
+    font-size: 1.4rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+  }
+  
+  /* Lista dei Partecipanti */
+.attendee-list {
+    list-style: none;
+    padding: 0.5rem; /* Aggiunge spazio interno */
+    margin: 0;
+    max-height: 300px; /* Altezza massima per 5 elementi circa */
+    overflow-y: auto; /* Abilita lo scrolling verticale */
+    border: 1px solid #ddd; /* Aggiungi un bordo per separare la lista */
+    border-radius: 0.5rem;
+    box-sizing: content-box; /* Include padding nella dimensione del contenitore */
+  }
+  
+  /* Elementi della Lista */
+  .attendee-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f9f9f9;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    color: #444;
+  }
+  
+  .attendee-list li:last-child {
+    margin-bottom: 0; /* Rimuove il margine dall'ultimo elemento */
+  }
+  
+  .attendee-list li strong {
+    color: #222;
+  }
+  
+  .attendee-list li span {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .attendee-list li i {
+    color: #007bff;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  /* Scrollbar Personalizzata */
+  .attendee-list::-webkit-scrollbar {
+    width: 8px; /* Ridotta per occupare meno spazio */
+  }
+  
+  .attendee-list::-webkit-scrollbar-thumb {
+    background: var(--light-gray);
+    border-radius: 10px;
+  }
+  
+  .attendee-list::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+  }
+  
+  .attendee-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Evita Sovrapposizione Scrollbar */
+  .attendee-list {
+    padding-right: 1rem; /* Spazio aggiuntivo per evitare la sovrapposizione */
+  }
+  
+  
+  /* Close Button */
+  .close-popup {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .close-popup:hover {
+    color: #333;
+  }
+    
