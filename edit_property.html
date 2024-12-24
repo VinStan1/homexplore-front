@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Property - HomeXplore</title>
+    <link rel="stylesheet" href="css/edit_property.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header"></header>
+
+    <!-- Main Content -->
+    <main>
+      <h1 style="text-align: center">Edit Property</h1>
+      <div class="property-container">
+        <form action="#" method="post" enctype="multipart/form-data">
+          <!-- Address -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="address"><i class="fas fa-map-marker-alt"></i> Address</label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                value="153 West 80th Street #2D1D, New York, NY 10024"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="price"><i class="fas fa-dollar-sign"></i> Price</label>
+              <input
+                type="number"
+                id="price"
+                name="price"
+                value="1850000"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Property Details -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="bedrooms"><i class="fas fa-bed"></i> Bedrooms</label>
+              <input
+                type="number"
+                id="bedrooms"
+                name="bedrooms"
+                value="3"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="bathrooms"><i class="fas fa-bath"></i> Bathrooms</label>
+              <input
+                type="number"
+                id="bathrooms"
+                name="bathrooms"
+                value="3"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Property Type and Size -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="type"><i class="fas fa-home"></i> Property Type</label>
+              <select id="type" name="type" required>
+                <option value="apartment" selected>Apartment</option>
+                <option value="house">House</option>
+                <option value="villa">Villa</option>
+                <option value="office">Office</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="size"><i class="fas fa-ruler-combined"></i> Size (sq ft)</label>
+              <input
+                type="number"
+                id="size"
+                name="size"
+                value="1350"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="form-row">
+            <div class="form-group" style="flex: 1">
+              <label for="description"><i class="fas fa-info-circle"></i> Description</label>
+              <textarea
+                id="description"
+                name="description"
+                rows="5"
+                required
+              >This stunning apartment located in the heart of New York offers a modern and comfortable environment. With spacious and bright areas, high-quality finishes, and a breathtaking view of the city, it is the ideal choice for those seeking elegance and convenience.</textarea>
+            </div>
+          </div>
+
+          <!-- Upload Thumbnail -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="thumbnail"><i class="fas fa-image"></i> Thumbnail</label>
+              <input
+                type="file"
+                id="thumbnail"
+                name="thumbnail"
+                accept="image/*"
+              />
+              <p class="helper-text">Replace the main photo if needed</p>
+            </div>
+          </div>
+
+          <!-- Upload Gallery -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="gallery"><i class="fas fa-camera"></i> Photo Gallery</label>
+              <input
+                type="file"
+                id="gallery"
+                name="gallery[]"
+                multiple
+                accept="image/*"
+              />
+              <p class="helper-text">Upload additional photos or replace existing ones</p>
+            </div>
+          </div>
+
+          <!-- Open House Schedule -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="open-house-day"><i class="fas fa-calendar-alt"></i> Open House Day</label>
+              <select id="open-house-day" name="open-house-day" required>
+                <option value="monday">Monday</option>
+                <option value="tuesday">Tuesday</option>
+                <option value="wednesday" selected>Wednesday</option>
+                <option value="thursday">Thursday</option>
+                <option value="friday">Friday</option>
+                <option value="saturday">Saturday</option>
+                <option value="sunday">Sunday</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="open-house-time"><i class="fas fa-clock"></i> Open House Time</label>
+              <input
+                type="time"
+                id="open-house-time"
+                name="open-house-time"
+                value="14:00"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit">Update Property</button>
+        </form>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+    <script src="components/headLinks.js"></script>
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+  </body>
+</html>

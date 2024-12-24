@@ -1,0 +1,86 @@
+/* Property Container */
+.property-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 1rem auto;
+    background: linear-gradient(135deg, #f9f9f9, #ffffff);
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+  }
+  
+  .property-container h1 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2rem;
+  }
+  
+  /* Form Styles */
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-row .form-group {
+    flex: 1 1 calc(50% - 0.5rem);
+    min-width: 150px;
+  }
+  
+  .form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .property-container input,
+  .property-container select,
+  .property-container textarea {
+    padding: 0.75rem;
+    border: 1px solid #cccccc;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .property-container textarea {
+    resize: vertical;
+  }
+  
+  .helper-text {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.25rem;
+  }
+  
+  /* Focus Styles */
+  .property-container input:focus,
+  .property-container select:focus,
+  .property-container textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 102, 204, 0.2);
+    outline: none;
+  }
+  
+  /* Button */
+  .property-container button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 0.25rem;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.2s ease;
+  }
+  
+  .property-container button:hover {
+    background-color: var(--secondary-color);
+  }
+  
