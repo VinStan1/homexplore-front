@@ -1,4 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const favouritesButton = document.getElementById("favourites-button");
+    const favouritesIcon = document.getElementById("favourites-icon");
+    const favouritesText = document.getElementById("favourites-text");
+
+    favouritesButton.addEventListener("click", () => {
+      // Toggle the "added" state
+      const isAdded = favouritesButton.classList.toggle("added");
+
+      // Update the icon and text based on the state
+      if (isAdded) {
+        favouritesIcon.classList.remove("far");
+        favouritesIcon.classList.add("fas");
+        favouritesText.textContent = "Favourites";
+      } else {
+        favouritesIcon.classList.remove("fas");
+        favouritesIcon.classList.add("far");
+        favouritesText.textContent = "Add to favourites";
+      }
+    });
     const mainPhoto = document.getElementById("main-photo");
     const thumbnails = document.querySelectorAll(".thumbnail-photos img");
     const overlay = document.getElementById("slider-overlay");
