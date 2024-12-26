@@ -1,97 +1,54 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Superuser - Nome del Progetto</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome per le icone -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Fogli di stile CSS -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/user.css">
-    <link rel="stylesheet" href="css/footer.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Superuser Dashboard - HomeXplore</title>
+    <link rel="stylesheet" href="css/superuser.css" />
+  </head>
+  <body>
     <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="index.html"><i class="fas fa-shield-alt"></i> Nome del Progetto</a>
-            </div>
-            <input type="checkbox" id="nav-toggle" class="nav-toggle">
-            <label for="nav-toggle" class="nav-toggle-label">
-                <span></span>
-            </label>
-            <nav>
-                <ul>
-                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="about.html"><i class="fas fa-info-circle"></i> Chi Siamo</a></li>
-                    <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Servizi</a></li>
-                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contatti</a></li>
-                    <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Accedi</a></li>
-                    <li><a href="register.html"><i class="fas fa-user-plus"></i> Registrati</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header id="header">
     </header>
 
     <!-- Main Content -->
-    <main class="superuser-main container">
-        <!-- Titolo Sezione -->
-        <section class="section-header">
-            <h1><i class="fas fa-user-shield"></i> Pannello Superuser</h1>
-        </section>
+    <main class="superuser-main">
+      <!-- Section Title -->
+      <section class="superuser-header">
+        <h1><i class="fas fa-brands fa-react"></i> Superuser Dashboard</h1>
+      </section>
 
-        <!-- Azioni Superuser -->
-        <section class="superuser-actions">
-            <!-- Dashboard -->
-            <div class="action-card">
-                <i class="fas fa-tachometer-alt fa-3x action-icon"></i>
-                <h2>Dashboard</h2>
-                <p>Visualizza statistiche e informazioni generali.</p>
-                <a href="dashboard.html" class="btn-primary"><i class="fas fa-chart-line"></i> Vai alla Dashboard</a>
-            </div>
+      <!-- superuser Actions -->
+      <section class="superuser-actions">
 
-            <!-- Rimuovi Utente -->
-            <div class="action-card">
-                <i class="fas fa-user-minus fa-3x action-icon"></i>
-                <h2>Rimuovi Utente</h2>
-                <form action="remove_user.html" method="POST" class="action-form">
-                    <div class="form-group">
-                        <label for="username"><i class="fas fa-user"></i> Nome Utente</label>
-                        <input type="text" id="username" name="username" placeholder="Inserisci nome utente" required>
-                    </div>
-                    <button type="submit" class="btn-secondary"><i class="fas fa-trash-alt"></i> Rimuovi Utente</button>
-                </form>
-            </div>
+        <!-- Agencies -->
+        <div class="action-card">
+          <i class="fas fa-building fa-3x action-icon"></i>
+          <h2>Agencies</h2>
+          <p>Manage all the agencies and their properties.</p>
+          <a href="superuser_agencies.html" class="btn-secondary"
+            ><i class="fas fa-edit"></i> Manage</a
+          >
+        </div>
 
-            <!-- Rimuovi Annuncio -->
-            <div class="action-card">
-                <i class="fas fa-trash fa-3x action-icon"></i>
-                <h2>Rimuovi Annuncio</h2>
-                <form action="remove_listing.html" method="POST" class="action-form">
-                    <div class="form-group">
-                        <label for="house-id"><i class="fas fa-house-user"></i> ID Casa</label>
-                        <input type="text" id="house-id" name="house_id" placeholder="Inserisci ID della casa" required>
-                    </div>
-                    <button type="submit" class="btn-secondary"><i class="fas fa-trash-alt"></i> Rimuovi Annuncio</button>
-                </form>
-            </div>
-        </section>
+        <!-- Buyers -->
+        <div class="action-card">
+          <i class="fas fa-users fa-3x action-icon"></i>
+          <h2>Buyers</h2>
+          <p>See and manage all the buyers on the platform.</p>
+          <a href="superuser_buyers.html" class="btn-secondary"
+            ><i class="fas fa-edit"></i> Manage</a
+          >
+        </div>
+
+      </section>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Nome del Progetto. Tutti i diritti riservati.</p>
-            <ul class="footer-links">
-                <li><a href="privacy.html"><i class="fas fa-user-shield"></i> Privacy Policy</a></li>
-                <li><a href="terms.html"><i class="fas fa-file-contract"></i> Termini di Servizio</a></li>
-            </ul>
-        </div>
+    <footer id="footer">
     </footer>
-</body>
+    <script src="components/headLinks.js"></script>
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+  </body>
 </html>
