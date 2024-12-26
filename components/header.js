@@ -31,7 +31,7 @@ const headerHTML = (isAuthenticated, userType) => `
             Search</a>
         </li>
         <li>
-          <a href="contact.html"><i class="fas fa-envelope"></i> Contact us</a>
+          <a href="mailto:admin@homexplore.com"><i class="fas fa-envelope"></i> Contact us</a>
         </li>
         ${
           isAuthenticated
