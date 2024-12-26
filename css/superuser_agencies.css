@@ -1,0 +1,272 @@
+/* Main Table */
+.agency-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+.agency-table th,
+.agency-table td {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
+}
+
+.agency-table th {
+  background-color: var(--secondary-color);
+  font-weight: bold;
+  color: #fff;
+}
+
+.agency-table td {
+  background-color: #fff;
+}
+
+.agency-table .btn-view-agency {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.agency-table .btn-view-agency:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.page-number {
+  padding: 0.5rem 1rem;
+  background-color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+}
+
+.page-number:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.page-number.active {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+.popup-content {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  position: relative;
+}
+
+.popup-content h2 {
+  margin-bottom: 1rem;
+  color: #222;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.popup-content .property-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+/* Close Button */
+.close-popup {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.close-popup:hover {
+  transform: scale(1.2);
+}
+
+.property-table th,
+.property-table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.property-table th {
+  background-color: var(--secondary-color);
+  font-weight: bold;
+  color: #fff;
+}
+
+.property-table .btn-remove-property {
+  padding: 0.5rem 1rem;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.property-table .btn-remove-property:hover {
+  background-color: #a71d2a;
+}
+
+/* Hidden Columns */
+.sold-date-column.hidden {
+  display: none;
+}
+
+.superuser-header {
+  display: flex;
+  background-color: white;
+  height: 100px;
+  padding-top: 10px;
+  padding-bottom: 0;
+  vertical-align: middle;
+  font-size: 1.5rem;
+  padding-left: 2rem;
+}
+
+.superuser-header h1 {
+  margin: 0;
+}
+
+main {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--light-gray);
+  padding: 0;
+  color: var(--text-color);
+  transition: background-color var(--transition-speed),
+    color var(--transition-speed);
+  width: 100%;
+}
+.superuser-main {
+  margin-top: 90px;
+  min-height: calc(100vh - 160px - 10px);
+}
+
+.section-header h1 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Switch Container */
+.switch-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #007bff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+#switch-label {
+  margin-left: 10px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Transition Effect */
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px #007bff;
+}
+
+/* Remove Button for Agencies */
+.btn-remove-agency {
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  background-color: #dc3545; /* Rosso */
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-remove-agency:hover {
+  background-color: #a71d2a; /* Rosso più scuro */
+  transform: scale(1.05);
+}
