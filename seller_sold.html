@@ -1,85 +1,77 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Vendute - Profilo Venditore</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome per le icone -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sold Properties - HomeXplore</title>
     <!-- Fogli di stile CSS -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/user.css">
-    <link rel="stylesheet" href="css/footer.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/seller_sold.css" />
+  </head>
+  <body>
     <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">Nome del Progetto</a>
-            </div>
-            <input type="checkbox" id="nav-toggle" class="nav-toggle">
-            <label for="nav-toggle" class="nav-toggle-label">
-                <span></span>
-            </label>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">Chi Siamo</a></li>
-                    <li><a href="services.html">Servizi</a></li>
-                    <li><a href="contact.html">Contatti</a></li>
-                    <li><a href="login.html">Accedi</a></li>
-                    <li><a href="register.html">Registrati</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
+    <header id="header"></header>
     <!-- Main Content -->
-    <main class="seller-sold-main container">
-        <!-- Titolo Sezione -->
-        <section class="section-header">
-            <h1>Le Tue Case Vendute</h1>
-        </section>
+    <main class="sold-properties-main">
+      <!-- Section Title -->
+      <section class="sold-properties-header">
+        <h1><i class="fas fa-sack-dollar"></i> Sold properties</h1>
+      </section>
 
-        <!-- Lista delle Case Vendute -->
-        <section class="houses-list">
-            <div class="house-card">
-                <img src="images/sold_house1.jpg" alt="Casa Venduta 1">
-                <div class="house-details">
-                    <h2>Appartamento in Centro</h2>
-                    <p><strong>Prezzo Venduto:</strong> €250,000</p>
-                    <p><strong>Località:</strong> Milano</p>
-                    <a href="house_details.html" class="btn-primary">Visualizza Dettagli</a>
-                </div>
+      <section class="sold-properties-actions">
+        <!-- Example Result Card -->
+        <div class="gallery-item">
+          <a href="#">
+            <img src="images/index/1.png" alt="Property 1" />
+            <div class="property-info">
+              <p class="type">Apartment</p>
+              <p class="address">123 Main St, Manhattan, New York, NY</p>
+              <p class="area">1,200 sqft</p>
+              <p class="price">$1,200,000</p>
+              <p class="date-inserted">Inserted: 2024-01-10</p>
+              <p class="date-sold">Sold: 2024-12-15</p>
             </div>
-
-            <div class="house-card">
-                <img src="images/sold_house2.jpg" alt="Casa Venduta 2">
-                <div class="house-details">
-                    <h2>Villa con Giardino</h2>
-                    <p><strong>Prezzo Venduto:</strong> €500,000</p>
-                    <p><strong>Località:</strong> Roma</p>
-                    <a href="house_details.html" class="btn-primary">Visualizza Dettagli</a>
-                </div>
+          </a>
+        </div>
+        <div class="gallery-item">
+          <a href="#">
+            <img src="images/index/2.png" alt="Property 2" />
+            <div class="property-info">
+              <p class="type">Apartment</p>
+              <p class="address">456 Main St, Manhattan, New York, NY</p>
+              <p class="area">800 sqft</p>
+              <p class="price">$439,000</p>
+              <p class="date-inserted">Inserted: 2024-01-09</p>
+              <p class="date-sold">Sold: 2024-12-01</p>
             </div>
-
-            <!-- Aggiungi altre card delle case vendute qui -->
-        </section>
+          </a>
+        </div>
+        <div class="gallery-item">
+          <a href="#">
+            <img src="images/index/4.png" alt="Property 4" />
+            <div class="property-info">
+              <p class="type">Apartment</p>
+              <p class="address">111 Main St, Manhattan, New York, NY</p>
+              <p class="area">1,397 sqft</p>
+              <p class="price">$2,435,000</p>
+              <p class="date-inserted">Inserted: 2024-07-10</p>
+              <p class="date-sold">Sold: 2024-11-15</p>
+            </div>
+          </a>
+        </div>
+      </section>
+       <!-- Pagination -->
+       <div class="pagination">
+        <a href="#" class="page-number active">1</a>
+        <a href="#" class="page-number">2</a>
+        <a href="#" class="page-number">3</a>
+        <a href="#" class="page-number">Next</a>
+      </div>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Nome del Progetto. Tutti i diritti riservati.</p>
-            <ul class="footer-links">
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="terms.html">Termini di Servizio</a></li>
-            </ul>
-        </div>
-    </footer>
-</body>
+    <footer id="footer"></footer>
+    <script src="components/headLinks.js"></script>
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+  </body>
 </html>
