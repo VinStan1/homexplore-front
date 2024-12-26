@@ -86,7 +86,7 @@
   border-radius: 0.75rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   width: 90%;
-  max-width: 800px;
+  max-width: 1200px;
   text-align: center;
   position: relative;
 }
@@ -269,4 +269,32 @@ input:checked + .slider:before {
 .btn-remove-agency:hover {
   background-color: #a71d2a; /* Rosso più scuro */
   transform: scale(1.05);
+}
+
+/* View Details Button */
+.btn-view-details {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-view-details:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+/* Align Buttons in Actions Column */
+.property-table td > * {
+  display: inline-block;
+  margin: 0.25rem 0;
+}
+
+.hidden {
+  display: none !important;
 }

@@ -1,4 +1,50 @@
-// JavaScript for Popup
+document.addEventListener("DOMContentLoaded", () => {
+  // Riferimenti agli elementi principali
+  const propertySwitch = document.getElementById("property-switch");
+  const table = document.querySelector(".property-table tbody");
+  const switchLabel = document.getElementById("switch-label");
+
+  // Funzione per aggiornare lo stato della tabella in base allo switch
+  const updateTableState = () => {
+    const soldMode = propertySwitch.checked;
+
+    // Cambia il testo dello switch
+    switchLabel.textContent = soldMode ? "Sold" : "For Sale";
+
+    // Aggiungi/rimuovi la classe hidden dalla colonna venduta
+    document.querySelectorAll(".sold-date-column").forEach((col) => {
+      if (soldMode) {
+        col.classList.remove("hidden");
+      } else {
+        col.classList.add("hidden");
+      }
+    });
+
+    // Mostra o nasconde i pulsanti "View Details"
+    document.querySelectorAll(".btn-view-details").forEach((button) => {
+      const soldColumn = button.closest("tr").querySelector(".sold-date-column");
+      if (soldColumn && !soldColumn.classList.contains("hidden")) {
+        button.classList.add("hidden");
+      } else {
+        button.classList.remove("hidden");
+      }
+    });
+  };
+
+  // Aggiorna lo stato della tabella al cambio dello switch
+  propertySwitch.addEventListener("change", updateTableState);
+
+  // Aggiorna lo stato iniziale della tabella (nel caso in cui sia già selezionato)
+  updateTableState();
+});
+
+// Gestione della chiusura del popup
+document.querySelector(".close-popup").addEventListener("click", () => {
+  const popup = document.getElementById("agency-popup");
+  popup.classList.add("hidden");
+});
+
+// Mostra il popup quando viene cliccato il pulsante "View Agency"
 document.querySelectorAll(".btn-view-agency").forEach((button) => {
   button.addEventListener("click", () => {
     const popup = document.getElementById("agency-popup");
@@ -6,41 +52,10 @@ document.querySelectorAll(".btn-view-agency").forEach((button) => {
   });
 });
 
-document.querySelector(".close-popup").addEventListener("click", () => {
-  const popup = document.getElementById("agency-popup");
-  popup.classList.add("hidden");
-});
-
+// Chiudi il popup cliccando fuori dall'area del contenuto
 window.addEventListener("click", (event) => {
   const popup = document.getElementById("agency-popup");
   if (event.target === popup) {
     popup.classList.add("hidden");
   }
-});
-
-// Gestisce il comportamento dello switch per alternare tra "For Sale" e "Sold"
-document.addEventListener("DOMContentLoaded", () => {
-  const propertySwitch = document.getElementById("property-switch");
-  const label = document.getElementById("switch-label");
-  const soldColumns = document.querySelectorAll(".sold-date-column");
-
-  // Event listener per cambiare lo stato dello switch
-  propertySwitch.addEventListener("change", () => {
-    if (propertySwitch.checked) {
-      label.textContent = "Sold";
-      soldColumns.forEach((col) => col.classList.remove("hidden"));
-    } else {
-      label.textContent = "For Sale";
-      soldColumns.forEach((col) => col.classList.add("hidden"));
-    }
-  });
-});
-
-document.querySelectorAll(".btn-remove-agency").forEach((button) => {
-  button.addEventListener("click", (e) => {
-    const agencyId = e.target.getAttribute("data-agency-id");
-    if (confirm(`Are you sure you want to remove agency ID: ${agencyId}?`)) {
-      alert(`Agency ID: ${agencyId} removed (mockup).`);
-    }
-  });
 });
