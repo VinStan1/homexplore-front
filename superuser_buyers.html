@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buyer Management - HomeXplore</title>
+    <link rel="stylesheet" href="css/superuser_buyers.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header"></header>
+    <!-- Main Content -->
+    <main class="superuser-main">
+      <!-- Page Title -->
+      <section class="superuser-header">
+        <h1><i class="fas fa-users"></i> Buyers Monitoring</h1>
+      </section>
+
+      <!-- Buyers Table -->
+      <section class="buyers-table-section">
+        <table class="buyers-table">
+          <thead>
+            <tr>
+              <th>Buyer ID</th>
+              <th>First name</th>
+              <th>Last name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Registered Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Mockup data -->
+            <tr>
+              <td>#1001</td>
+              <td>John</td>
+              <td>Doe</td>
+              <td>john.doe@example.com</td>
+              <td>+1 123 456 7890</td>
+              <td>2024-11-10</td>
+              <td>
+                <button class="btn-remove-buyer" data-buyer-id="1001">
+                  Remove
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>#1002</td>
+              <td>Jane</td>
+              <td>Smith</td>
+              <td>jane.smith@example.com</td>
+              <td>+1 987 654 3210</td>
+              <td>2024-10-05</td>
+              <td>
+                <button class="btn-remove-buyer" data-buyer-id="1002">
+                  Remove
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>#1003</td>
+              <td>Mark</td>
+              <td>Johnson</td>
+              <td>mark.johnson@example.com</td>
+              <td>+1 456 789 1230</td>
+              <td>2024-09-22</td>
+              <td>
+                <button class="btn-remove-buyer" data-buyer-id="1003">
+                  Remove
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>#1004</td>
+              <td>Emily</td>
+              <td>Davis</td>
+              <td>emily.davis@example.com</td>
+              <td>+1 321 654 9870</td>
+              <td>2024-12-01</td>
+              <td>
+                <button class="btn-remove-buyer" data-buyer-id="1004">
+                  Remove
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>#1005</td>
+              <td>Michael</td>
+              <td>Wilson</td>
+              <td>michael.wilson@example.com</td>
+              <td>+1 789 123 4560</td>
+              <td>2024-08-15</td>
+              <td>
+                <button class="btn-remove-buyer" data-buyer-id="1005">
+                  Remove
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Pagination -->
+        <div class="pagination">
+          <a href="#" class="page-number active">1</a>
+          <a href="#" class="page-number">2</a>
+          <a href="#" class="page-number">3</a>
+          <a href="#" class="page-number active">Next</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+    <script src="components/headLinks.js"></script>
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script>
+      // Mockup for Remove Action
+      document.querySelectorAll(".btn-remove-buyer").forEach((button) => {
+        button.addEventListener("click", (e) => {
+          const buyerId = e.target.getAttribute("data-buyer-id");
+          if (
+            confirm(`Are you sure you want to remove buyer ID: ${buyerId}?`)
+          ) {
+            alert(`Buyer ID: ${buyerId} removed (mockup).`);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

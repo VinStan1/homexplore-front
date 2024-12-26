@@ -1,0 +1,104 @@
+/* Page Title */
+.superuser-header {
+  display: flex;
+  background-color: white;
+  height: 100px;
+  padding-top: 10px;
+  padding-bottom: 0;
+  vertical-align: middle;
+  font-size: 1.5rem;
+  padding-left: 2rem;
+}
+
+.superuser-header h1 {
+  margin: 0;
+}
+
+
+main {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--light-gray);
+    padding: 0;
+    color: var(--text-color);
+    transition: background-color var(--transition-speed),
+      color var(--transition-speed);
+    width: 100%;
+  }
+
+.superuser-main {
+  margin-top: 90px;
+  min-height: calc(100vh - 160px - 10px);
+}
+
+/* Buyers Table Section */
+.buyers-table-section {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.buyers-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.buyers-table th,
+.buyers-table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.buyers-table th {
+  background-color: var(--secondary-color);
+  color: white;
+  font-weight: bold;
+}
+
+.buyers-table td {
+  background-color: white;
+}
+
+.buyers-table .btn-remove-buyer {
+  padding: 0.5rem 1rem;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buyers-table .btn-remove-buyer:hover {
+  background-color: #a71d2a;
+}
+
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .page-number {
+    padding: 0.5rem 1rem;
+    background-color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .page-number:hover {
+    background-color: var(--accent-color);
+    color: white;
+  }
+  
+  .page-number.active {
+    background-color: var(--accent-color);
+    color: white;
+  }
+  
