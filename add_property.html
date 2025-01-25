@@ -18,7 +18,9 @@
           <!-- Address -->
           <div class="form-row">
             <div class="form-group">
-              <label for="address"><i class="fas fa-map-marker-alt"></i> Address</label>
+              <label for="address"
+                ><i class="fas fa-map-marker-alt"></i> Address</label
+              >
               <input
                 type="text"
                 id="address"
@@ -28,7 +30,9 @@
               />
             </div>
             <div class="form-group">
-              <label for="price"><i class="fas fa-dollar-sign"></i> Price</label>
+              <label for="price"
+                ><i class="fas fa-dollar-sign"></i> Price</label
+              >
               <input
                 type="number"
                 id="price"
@@ -52,7 +56,9 @@
               />
             </div>
             <div class="form-group">
-              <label for="bathrooms"><i class="fas fa-bath"></i> Bathrooms</label>
+              <label for="bathrooms"
+                ><i class="fas fa-bath"></i> Bathrooms</label
+              >
               <input
                 type="number"
                 id="bathrooms"
@@ -66,7 +72,9 @@
           <!-- Property Type and Size -->
           <div class="form-row">
             <div class="form-group">
-              <label for="type"><i class="fas fa-home"></i> Property Type</label>
+              <label for="type"
+                ><i class="fas fa-home"></i> Property Type</label
+              >
               <select id="type" name="type" required>
                 <option disabled value="">Select property type</option>
                 <option value="apartment">Apartment</option>
@@ -76,7 +84,9 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="size"><i class="fas fa-ruler-combined"></i> Size (sq ft)</label>
+              <label for="size"
+                ><i class="fas fa-ruler-combined"></i> Size (sq ft)</label
+              >
               <input
                 type="number"
                 id="size"
@@ -90,7 +100,9 @@
           <!-- Description -->
           <div class="form-row">
             <div class="form-group" style="flex: 1">
-              <label for="description"><i class="fas fa-info-circle"></i> Description</label>
+              <label for="description"
+                ><i class="fas fa-info-circle"></i> Description</label
+              >
               <textarea
                 id="description"
                 name="description"
@@ -104,7 +116,9 @@
           <!-- Upload Thumbnail -->
           <div class="form-row">
             <div class="form-group">
-              <label for="thumbnail"><i class="fas fa-image"></i> Thumbnail</label>
+              <label for="thumbnail"
+                ><i class="fas fa-image"></i> Thumbnail</label
+              >
               <input
                 type="file"
                 id="thumbnail"
@@ -119,7 +133,9 @@
           <!-- Upload Gallery -->
           <div class="form-row">
             <div class="form-group">
-              <label for="gallery"><i class="fas fa-camera"></i> Photo Gallery</label>
+              <label for="gallery"
+                ><i class="fas fa-camera"></i> Photo Gallery</label
+              >
               <input
                 type="file"
                 id="gallery"
@@ -127,14 +143,18 @@
                 multiple
                 accept="image/*"
               />
-              <p class="helper-text">Upload additional photos for the gallery</p>
+              <p class="helper-text">
+                Upload additional photos for the gallery
+              </p>
             </div>
           </div>
 
           <!-- Open House Schedule -->
           <div class="form-row">
             <div class="form-group">
-              <label for="open-house-day"><i class="fas fa-calendar-alt"></i> Open House Day</label>
+              <label for="open-house-day"
+                ><i class="fas fa-calendar-alt"></i> Open House Day</label
+              >
               <select id="open-house-day" name="open-house-day" required>
                 <option disabled value="">Select a day</option>
                 <option value="monday">Monday</option>
@@ -146,12 +166,29 @@
                 <option value="sunday">Sunday</option>
               </select>
             </div>
+          </div>
+          <div class="form-row">
             <div class="form-group">
-              <label for="open-house-time"><i class="fas fa-clock"></i> Open House Time</label>
+              <label for="open-house-time-start"
+                ><i class="fas fa-clock"></i> Open House Start Time</label
+              >
               <input
                 type="time"
-                id="open-house-time"
-                name="open-house-time"
+                id="open-house-time-start"
+                name="open-house-time-start"
+                value="14:00"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="open-house-time-end"
+                ><i class="fas fa-clock"></i> Open House End Time</label
+              >
+              <input
+                type="time"
+                id="open-house-time-end"
+                name="open-house-time-end"
+                value="16:00"
                 required
               />
             </div>
