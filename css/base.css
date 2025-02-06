@@ -93,6 +93,18 @@ button {
     transform: translateY(-3px);
 }
 
+
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    transform: translateY(-3px);
+}
+
 main {
     padding: 4rem 1rem 2rem; /* Adjusted padding to avoid header overlap */
 }
