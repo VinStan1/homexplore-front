@@ -1,8 +1,6 @@
 /* map.css */
 
-/* Contenitore della mappa */
-
-/* Generale */
+/* General styles */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -42,11 +40,10 @@ section {
 
 #map {
   width: 100%;
-  height: 100%; /* Altezza dinamica considerando header e footer */
+  height: 100%;
 }
 
-
-/* Popup per la mappa */
+/* Map popup styles */
 .mapboxgl-popup-content {
   background: none !important;
   box-shadow: none !important;
@@ -104,4 +101,13 @@ section {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Fixed dimensions for property images */
+.property-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 10px;
 }
