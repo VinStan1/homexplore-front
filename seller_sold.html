@@ -16,6 +16,16 @@
       <section class="sold-properties-header">
         <h1><i class="fas fa-sack-dollar"></i> Sold properties</h1>
       </section>
+      <div class="view-analytics">
+        <button id="show-search" class="btn-secondary">
+          <i class="fas fa-search"></i>
+          Search
+        </button>
+        <button id="show-analytics" class="btn-primary">
+          <i class="fas fa-chart-bar"></i>
+          Show analytics
+        </button>
+      </div>
 
       <section class="sold-properties-actions">
         <!-- Example Result Card -->
@@ -24,9 +34,9 @@
             <img src="images/index/1.png" alt="Property 1" />
             <div class="property-info">
               <p class="type">Apartment</p>
-              <p class="address">123 Main St, Manhattan, New York, NY</p>
               <p class="area">1,200 sqft</p>
               <p class="price">$1,200,000</p>
+              <p class="cityNeighbourhood">Diamond District, New York</p>
               <p class="date-inserted">Inserted: 2024-01-10</p>
               <p class="date-sold">Sold: 2024-12-15</p>
             </div>
@@ -37,9 +47,9 @@
             <img src="images/index/2.png" alt="Property 2" />
             <div class="property-info">
               <p class="type">Apartment</p>
-              <p class="address">456 Main St, Manhattan, New York, NY</p>
               <p class="area">800 sqft</p>
               <p class="price">$439,000</p>
+              <p class="cityNeighbourhood">Diamond District, New York</p>
               <p class="date-inserted">Inserted: 2024-01-09</p>
               <p class="date-sold">Sold: 2024-12-01</p>
             </div>
@@ -50,17 +60,17 @@
             <img src="images/index/4.png" alt="Property 4" />
             <div class="property-info">
               <p class="type">Apartment</p>
-              <p class="address">111 Main St, Manhattan, New York, NY</p>
               <p class="area">1,397 sqft</p>
               <p class="price">$2,435,000</p>
+              <p class="cityNeighbourhood">Diamond District, New York</p>
               <p class="date-inserted">Inserted: 2024-07-10</p>
               <p class="date-sold">Sold: 2024-11-15</p>
             </div>
           </a>
         </div>
       </section>
-       <!-- Pagination -->
-       <div class="pagination">
+      <!-- Pagination -->
+      <div class="pagination">
         <a href="#" class="page-number active">1</a>
         <a href="#" class="page-number">2</a>
         <a href="#" class="page-number">3</a>
@@ -68,8 +78,95 @@
       </div>
     </main>
 
+    <!-- Popup Search -->
+    <div id="search-popup" class="popup hidden">
+      <div class="popup-overlay"></div>
+      <div class="popup-content">
+        <span class="close-search-btn">&times;</span>
+        <h2>Search Sold Properties</h2>
+        <form action="" method="GET" class="search-form">
+          <div class="form-group">
+            <label for="search-city"><i class="fas fa-city"></i> City</label>
+            <input
+              type="text"
+              id="search-city"
+              name="city"
+              placeholder="City"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="search-neighbourhood"><i class="fas fa-tree-city"></i> Neighbourhood</label>
+            <input
+              type="text"
+              id="search-neighbourhood"
+              name="neighbourhood"
+              placeholder="Neighbourhood"
+            />
+          </div>
+          <div class="form-group button-group">
+            <button type="submit" class="btn-secondary"><i class="fas fa-search"></i> Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Popup analytics -->
+    <div id="analytics-popup" class="popup hidden">
+      <div class="popup-overlay"></div>
+      <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <h2>Sold properties analytics</h2>
+        <div class="form-row">
+          <div class="form-group">
+              <label for="type"><i class="fas fa-city"></i> City</label> <br>
+              <select id="type" name="type" required>
+                <option disabled value="">Select city</option>
+                <option value="new york">New York</option>
+                <option value="los angeles">Los Angeles</option>
+                <option value="detroit">Detroit</option>
+              </select>
+            </div>
+          <div class="form-group">
+            <label for="start-date"
+              ><i class="fas fa-calendar"></i> Start date</label
+            >
+            <input
+              type="date"
+              id="start-date"
+              name="start-date"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="end-date"
+              ><i class="fas fa-calendar"></i> End date</label
+            >
+            <input
+              type="date"
+              id="end-date"
+              name="end-date"
+              required
+            />
+          </div>
+        </div>
+        <div class="charts-container">
+          <div class="chart-card">
+            <h3>Average Price per Neighbourhood</h3>
+            <canvas id="avgPriceChart"></canvas>
+          </div>
+          <div class="chart-card">
+            <h3>Average Sell Time per Neighbourhood</h3>
+            <canvas id="priceIncreaseChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Footer -->
     <footer id="footer"></footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/seller_sold.js"></script>
     <script src="components/headLinks.js"></script>
     <script src="components/header.js"></script>
     <script src="components/footer.js"></script>
