@@ -200,7 +200,7 @@
   background-color: var(--light-gray);
   padding: var(--card-padding);
   border-radius: var(--border-radius);
-  max-width: 800px;
+  max-width: 70vw;
   margin: 0 auto;
   box-shadow: var(--card-shadow);
   transition: box-shadow var(--transition-speed) ease, transform 0.3s ease;
@@ -317,7 +317,7 @@
 
 @media (min-width: 992px) {
   #advanced-params {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
   }
 }
 
@@ -421,7 +421,7 @@ main{
   background: #fff;
   padding: 20px;
   border-radius: 12px;
-  width: 90vw;
+  width: 80vw;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   position: relative;
   display: flex;
@@ -457,7 +457,7 @@ main{
 
 .charts-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 20px;
   width: 100%;
   flex-wrap: wrap;
@@ -469,13 +469,12 @@ main{
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   flex: 1;
-  min-width: 45%;
-  max-width: 50%;
+  min-width: 75%;
+  max-width: 80%;
   text-align: center;
 }
 
 .chart-card h3 {
-  margin-bottom: 10px;
   font-size: 1.2rem;
   color: #555;
 }
@@ -483,4 +482,15 @@ main{
 .popup-content canvas {
   max-width: 100%;
   height: auto;
+}
+
+select {
+  padding: 0.5rem;
+  border: 1px solid #cccccc;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
 }

@@ -16,7 +16,7 @@
       <section class="search-section container" id="search">
         <h2>Find Your Ideal Home</h2>
         <div class="card">
-          <form action="search.html" method="GET" class="search-form">
+          <form action="" method="GET" class="search-form">
             <div class="form-group">
               <label for="location"
                 ><i class="fas fa-map-marker-alt"></i> <span>City</span></label
@@ -27,6 +27,17 @@
                 name="location"
                 placeholder="City"
                 required
+              />
+            </div>
+            <div class="form-group">
+              <label for="address"
+                ><i class="fas fa-sign-hanging"></i> Address</label
+              >
+              <input
+                type="text"
+                id="address"
+                name="address"
+                placeholder="Address"
               />
             </div>
             <div class="form-group">
@@ -53,14 +64,26 @@
             <!-- Advanced Parameters -->
             <div id="advanced-params">
               <div class="form-group">
-                <label for="neighborhood"
-                  ><i class="fas fa-city"></i> Neighborhood</label
+                <label for="neighbourhood"
+                  ><i class="fas fa-city"></i> Neighbourhood</label
                 >
                 <input
                   type="text"
-                  id="neighborhood"
-                  name="neighborhood"
-                  placeholder="Neighborhood"
+                  id="neighbourhood"
+                  name="neighbourhood"
+                  placeholder="Neighbourhood"
+                />
+              </div>
+              <!-- type of property -->
+              <div class="form-group">
+                <label for="property-type"
+                  ><i class="fas fa-home"></i> Property Type</label
+                >
+                <input
+                  type="text"
+                  id="property-type"
+                  name="property_type"
+                  placeholder="condo"
                 />
               </div>
               <div class="form-group">
@@ -78,13 +101,25 @@
                 <label for="bedrooms"
                   ><i class="fas fa-bed"></i> Bedrooms</label
                 >
-                <input type="number" id="bedrooms" name="bedrooms" value="1" min="1" />
+                <input
+                  type="number"
+                  id="bedrooms"
+                  name="bedrooms"
+                  value="1"
+                  min="1"
+                />
               </div>
               <div class="form-group">
                 <label for="bathrooms"
                   ><i class="fas fa-bath"></i> Bathrooms</label
                 >
-                <input type="number" id="bathrooms" name="bathrooms" value="1" min="1" />
+                <input
+                  type="number"
+                  id="bathrooms"
+                  name="bathrooms"
+                  value="1"
+                  min="1"
+                />
               </div>
             </div>
 
@@ -101,7 +136,7 @@
           <h2>Search Results for Manhattan, New York</h2>
           <div class="button-group">
             <a
-              href="map.html?city=NewYork&neighborhood=Manhattan"
+              href="map.html?city=NewYork&neighbourhood=Manhattan"
               class="btn-primary"
             >
               <i class="fas fa-globe-americas"></i>
@@ -113,25 +148,37 @@
             </a>
           </div>
         </div>
+        <!-- Analytics Popup -->
         <div id="analytics-popup" class="popup hidden">
           <div class="popup-overlay"></div>
           <div class="popup-content">
             <span class="close-btn">&times;</span>
-            <h2>New York Analytics</h2>
+            <h2>New York, Manhattan Analytics</h2>
+            <!-- Select to choose which chart to display -->
+            <div class="chart-select-container">
+              <label for="chart-select">Select Analytics</label>
+              <select id="chart-select">
+                <option value="chart-card1">Average Price per Neighbourhood</option>
+                <option value="chart-card2">Average Price by Property Type</option>
+                <option value="chart-card3">Average Property Attributes by Type</option>
+              </select>
+            </div>
             <div class="charts-container">
-              <div class="chart-card">
-                <h3>Average Price per Square Meter</h3>
+              <div class="chart-card" id="chart-card1">
+                <h3>Average Price per Neighbourhood</h3>
                 <canvas id="avgPriceChart"></canvas>
               </div>
-              <div class="chart-card">
-                <h3>Price Increases (Last K Months)</h3>
-                <canvas id="priceIncreaseChart"></canvas>
+              <div class="chart-card" id="chart-card2">
+                <h3>Average Price by Property Type</h3>
+                <canvas id="avgPriceTypeChart"></canvas>
+              </div>
+              <div class="chart-card" id="chart-card3">
+                <h3>Average Property Attributes by Type</h3>
+                <canvas id="avgStatsForType"></canvas>
               </div>
             </div>
           </div>
-        </div>        
-        
-        
+        </div>
 
         <div class="results-grid">
           <!-- Example Result Card -->
