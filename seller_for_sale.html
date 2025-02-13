@@ -16,7 +16,15 @@
       <section class="for-sale-header">
         <h1><i class="fas fa-house-flag"></i> Properties for Sale</h1>
       </section>
-
+      <div class="view-schedule">
+        <button id="show-search" class="btn-secondary">
+          <i class="fas fa-search"></i>
+          Search
+        </button>
+        <button id="view-schedule" class="btn-secondary">
+          <i class="fas fa-calendar-alt"></i> View schedule for today
+        </button>
+      </div>
       <!-- for-sale Actions -->
       <section class="for-sale-actions">
         <!-- Example Result Card -->
@@ -25,9 +33,8 @@
             <img src="images/index/1.png" alt="Property 1" />
           </a>
           <div class="property-info">
-            <p class="type">Apartment</p>
             <p class="address">123 Main St, Manhattan, New York, NY</p>
-            <p class="area">1,200 sqft</p>
+            <!-- <p class="area">1,200 sqft</p> -->
             <p class="price">$1,200,000</p>
             <a href="edit_property.html">
               <button class="btn-secondary">
@@ -40,7 +47,7 @@
             >
               <i class="fas fa-calendar-alt"></i> View Reservations
             </button>
-            <br>
+            <br />
             <button class="btn-success">
               <i class="fas fa-dollar-sign"></i> Sold
             </button>
@@ -54,9 +61,8 @@
             <img src="images/index/2.png" alt="Property 2" />
           </a>
           <div class="property-info">
-            <p class="type">Apartment</p>
             <p class="address">456 Main St, Manhattan, New York, NY</p>
-            <p class="area">800 sqft</p>
+            <!-- <p class="area">800 sqft</p> -->
             <p class="price">$439,000</p>
             <a href="edit_property.html">
               <button class="btn-secondary">
@@ -69,7 +75,7 @@
             >
               <i class="fas fa-calendar-alt"></i> View Reservations
             </button>
-            <br>
+            <br />
             <button class="btn-success">
               <i class="fas fa-dollar-sign"></i> Sold
             </button>
@@ -83,9 +89,8 @@
             <img src="images/index/4.png" alt="Property 4" />
           </a>
           <div class="property-info">
-            <p class="type">Apartment</p>
             <p class="address">111 Main St, Manhattan, New York, NY</p>
-            <p class="area">1,397 sqft</p>
+            <!-- <p class="area">1,397 sqft</p> -->
             <p class="price">$2,435,000</p>
             <a href="edit_property.html">
               <button class="btn-secondary">
@@ -98,7 +103,7 @@
             >
               <i class="fas fa-calendar-alt"></i> View Reservations
             </button>
-            <br>
+            <br />
             <button class="btn-success">
               <i class="fas fa-dollar-sign"></i> Sold
             </button>
@@ -110,29 +115,93 @@
       </section>
     </main>
 
+    <!-- Popup Search -->
+    <div id="search-popup" class="popup hidden">
+      <div class="popup-overlay"></div>
+      <div class="popup-content">
+        <span class="close-search-btn">&times;</span>
+        <h2>Search Properties On Sale</h2>
+        <form action="" method="GET" class="search-form">
+          <div class="form-group">
+            <label for="search-city"><i class="fas fa-city"></i> City</label>
+            <input
+              type="text"
+              id="search-city"
+              name="city"
+              placeholder="City"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="search-neighbourhood"><i class="fas fa-tree-city"></i> Neighbourhood</label>
+            <input
+              type="text"
+              id="search-neighbourhood"
+              name="neighbourhood"
+              placeholder="Neighbourhood"
+            />
+          </div>
+          <div class="form-group">
+            <label for="search-address"><i class="fas fa-sign-hanging"></i> Address</label>
+            <input
+              type="text"
+              id="search-address"
+              name="address"
+              placeholder="address"
+              required
+            />
+          </div>
+          <div class="form-group button-group">
+            <button type="submit" class="btn-secondary"><i class="fas fa-search"></i> Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <!-- Popup for Reservations -->
     <div id="reservation-popup" class="popup hidden">
       <div class="popup-content">
         <span class="close-popup">&times;</span>
         <h2><i class="fas fa-calendar-alt"></i> Open House Reservations</h2>
-        <p><strong>Next Open House:</strong> December 30, 2024, at 2:00 - 4:00 PM</p>
+        <p>
+          <strong>Next Open House:</strong> December 30, 2024, at 2:00 PM - 4:00
+          PM
+        </p>
+        <p><strong>Number of attendees:</strong> 5/10</p>
         <h3>Attendees</h3>
+        <button class="btn-secondary" style="margin-bottom:5px">Download PDF</button>
         <ul class="attendee-list">
           <li>
-            <strong>John Doe</strong>  john.doe@example.com  +1 123 456 7890
+            <strong>John Doe</strong> john.doe@example.com +1 123 456 7890
           </li>
           <li>
-            <strong>John Doe</strong> john.doe@example.com  +1 123 456 7890
+            <strong>John Doe</strong> john.doe@example.com +1 123 456 7890
           </li>
           <li>
-            <strong>John Doe</strong>  john.doe@example.com  +1 123 456 7890
+            <strong>John Doe</strong> john.doe@example.com +1 123 456 7890
           </li>
           <li>
-            <strong>John Doe</strong>  john.doe@example.com  +1 123 456 7890
+            <strong>John Doe</strong> john.doe@example.com +1 123 456 7890
           </li>
           <li>
-            <strong>John Doe</strong>  john.doe@example.com  +1 123 456 7890
+            <strong>John Doe</strong> john.doe@example.com +1 123 456 7890
           </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Popup for Schedule of today -->
+    <div id="schedule-popup" class="popup hidden">
+      <div class="popup-content">
+        <span class="close-popup">&times;</span>
+        <h2><i class="fas fa-calendar-alt"></i> Schedule for Today</h2>
+        <p><strong>Today:</strong> February 17, 2025</p>
+        <p><strong>Number of Open Houses:</strong> 3</p>
+        <h3>Open Houses</h3>
+        <ul class="open-house-list">
+          <li><strong>123 Main St, New York</strong> 2:00 PM - 4:00 PM</li>
+          <li><strong>456 Main St, New York</strong> 2:00 PM - 4:00 PM</li>
+          <li><strong>111 Main St, New York</strong> 2:00 PM - 4:00 PM</li>
         </ul>
       </div>
     </div>

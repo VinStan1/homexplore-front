@@ -17,6 +17,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding-top:1rem;
     gap: 2rem;
     width: 100%;
 }
@@ -260,7 +261,7 @@
   }
   
   /* Lista dei Partecipanti */
-.attendee-list {
+.open-house-list, .attendee-list {
     list-style: none;
     padding: 0.5rem; /* Aggiunge spazio interno */
     margin: 0;
@@ -272,7 +273,7 @@
   }
   
   /* Elementi della Lista */
-  .attendee-list li {
+  .open-house-list li, .attendee-list li {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -285,51 +286,51 @@
     color: #444;
   }
   
-  .attendee-list li:last-child {
+  .open-house-list li:last-child, .attendee-list li:last-child {
     margin-bottom: 0; /* Rimuove il margine dall'ultimo elemento */
   }
   
-  .attendee-list li strong {
+  .open-house-list li strong, .attendee-list li strong {
     color: #222;
   }
   
-  .attendee-list li span {
+  .open-house-list li span, .attendee-list li span {
     font-size: 0.9rem;
     color: #666;
   }
   
-  .attendee-list li i {
+  .open-house-list li i, .attendee-list li i {
     color: #007bff;
     margin-right: 0.5rem;
     font-size: 1.2rem;
   }
   
   /* Scrollbar Personalizzata */
-  .attendee-list::-webkit-scrollbar {
+  .open-house-list::-webkit-scrollbar ,.attendee-list::-webkit-scrollbar {
     width: 8px; /* Ridotta per occupare meno spazio */
   }
   
-  .attendee-list::-webkit-scrollbar-thumb {
+  .open-house-list::-webkit-scrollbar-thumb ,.attendee-list::-webkit-scrollbar-thumb {
     background: var(--light-gray);
     border-radius: 10px;
   }
   
-  .attendee-list::-webkit-scrollbar-thumb:hover {
+  .open-house-list::-webkit-scrollbar-thumb:hover ,.attendee-list::-webkit-scrollbar-thumb:hover {
     background: var(--accent-color);
   }
   
-  .attendee-list::-webkit-scrollbar-track {
+  .open-house-list::-webkit-scrollbar-track ,.attendee-list::-webkit-scrollbar-track {
     background: #f1f1f1;
   }
   
   /* Evita Sovrapposizione Scrollbar */
-  .attendee-list {
+  .open-house-list, .attendee-list {
     padding-right: 1rem; /* Spazio aggiuntivo per evitare la sovrapposizione */
   }
   
   
   /* Close Button */
-  .close-popup {
+  .close-search-btn, .close-popup {
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -344,3 +345,95 @@
     color: #333;
   }
     
+  .view-schedule{
+    display: flex;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    margin-top:1rem;
+    gap:1rem;
+  }
+
+.view-schedule .btn-secondary{
+    background-color: goldenrod;
+}
+
+#show-search {
+  background-color: #ff6f61;
+}
+
+
+/* Flexbox for two fields per row */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Each field takes 33% width */
+.form-row .form-group {
+  flex: 1 1 calc(25%);
+  min-width: 150px;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+#search-popup .btn-secondary{
+  background-color: #ff6f61;
+}
+
+#search-popup .popup-content{
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.search-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  width: 25vw;
+}
+
+.search-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-form .form-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+  vertical-align: middle;
+}
+
+.search-form .form-group i{
+  margin:0;
+}
+
+.search-form .form-group input,
+.search-form .form-group select {
+  padding: 0.75rem;
+    border: 1px solid #cccccc;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+
+    /* Assicura che gli input rispettino il contenitore */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.search-form .form-group input:focus,
+.search-form .form-group select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(0, 102, 204, 0.2);
+  outline: none;
+}
