@@ -747,7 +747,7 @@ main {
     gap: 0.5rem;
 }
 
-.superuser-actions, .buyer-actions, .seller-actions {
+.buyer-actions, .seller-actions {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -857,7 +857,7 @@ main {
 }
 
 @media (min-width: 768px) {
-    .superuser-actions, .buyer-actions, .seller-actions {
+    .buyer-actions, .seller-actions {
         flex-direction: row;
         justify-content: space-between;
     }
