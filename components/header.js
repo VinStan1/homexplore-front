@@ -91,9 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
           case "buyer":
             window.location.href = "buyer.html";
             break;
-          case "superuser":
-            window.location.href = "superuser.html";
-            break;
           default:
             alert("Unknown user type. Please contact support.");
         }
